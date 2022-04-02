@@ -8,19 +8,38 @@ import {
   Image,
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-// import Image from "next/image";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const routes = [
+    {
+      name: "Home",
+      link: "#",
+    },
+    {
+      name: "Landings",
+      link: "#",
+    },
+    {
+      name: "Pages",
+      link: "#",
+    },
+    {
+      name: "Docs",
+      link: "#",
+    },
+    {
+      name: "Help",
+      link: "#",
+    },
+  ];
 
   return (
     <Box
@@ -52,61 +71,20 @@ function Navbar() {
         </Button>
 
         <HStack spacing={10} display={["none", "none", "flex"]}>
-          <Link href="#" passHref>
-            <ChakraLink
-              _focus={{ outline: "none" }}
-              _hover={{ outline: "none" }}
-              color="text.gray"
-              fontWeight="semibold"
-              fontSize="md"
-            >
-              Home
-            </ChakraLink>
-          </Link>
-          <Link href="#" passHref>
-            <ChakraLink
-              _focus={{ outline: "none" }}
-              _hover={{ outline: "none" }}
-              color="text.gray"
-              fontWeight="semibold"
-              fontSize="md"
-            >
-              Landings
-            </ChakraLink>
-          </Link>
-          <Link href="#" passHref>
-            <ChakraLink
-              _focus={{ outline: "none" }}
-              _hover={{ outline: "none" }}
-              color="text.gray"
-              fontWeight="semibold"
-              fontSize="md"
-            >
-              Pages
-            </ChakraLink>
-          </Link>
-          <Link href="#" passHref>
-            <ChakraLink
-              _focus={{ outline: "none" }}
-              _hover={{ outline: "none" }}
-              color="text.gray"
-              fontWeight="semibold"
-              fontSize="md"
-            >
-              Docs
-            </ChakraLink>
-          </Link>
-          <Link href="#" passHref>
-            <ChakraLink
-              _focus={{ outline: "none" }}
-              _hover={{ outline: "none" }}
-              color="text.gray"
-              fontWeight="semibold"
-              fontSize="md"
-            >
-              Help
-            </ChakraLink>
-          </Link>
+          {routes.map(({ name, link }: any) => (
+            <Link href={link} passHref key={name}>
+              <ChakraLink
+                _focus={{ outline: "none" }}
+                _hover={{ outline: "none" }}
+                color="text.gray"
+                fontWeight="semibold"
+                fontSize="md"
+              >
+                {name}
+              </ChakraLink>
+            </Link>
+          ))}
+
           <Button
             bg="white"
             color="brand.primary"
@@ -124,66 +102,26 @@ function Navbar() {
         </HStack>
       </HStack>
 
+      {/* for mobile  */}
       <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent pt="4rem">
           <DrawerBody>
             <VStack spacing={10}>
-              <Link href="#" passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="text.gray"
-                  fontWeight="semibold"
-                  fontSize="md"
-                >
-                  Home
-                </ChakraLink>
-              </Link>
-              <Link href="#" passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="text.gray"
-                  fontWeight="semibold"
-                  fontSize="md"
-                >
-                  Landings
-                </ChakraLink>
-              </Link>
-              <Link href="#" passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="text.gray"
-                  fontWeight="semibold"
-                  fontSize="md"
-                >
-                  Pages
-                </ChakraLink>
-              </Link>
-              <Link href="#" passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="text.gray"
-                  fontWeight="semibold"
-                  fontSize="md"
-                >
-                  Docs
-                </ChakraLink>
-              </Link>
-              <Link href="#" passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="text.gray"
-                  fontWeight="semibold"
-                  fontSize="md"
-                >
-                  Help
-                </ChakraLink>
-              </Link>
+              {routes.map(({ name, link }: any) => (
+                <Link href={link} passHref key={name}>
+                  <ChakraLink
+                    _focus={{ outline: "none" }}
+                    _hover={{ outline: "none" }}
+                    color="text.gray"
+                    fontWeight="semibold"
+                    fontSize="md"
+                  >
+                    {name}
+                  </ChakraLink>
+                </Link>
+              ))}
+
               <Button
                 bg="white"
                 color="brand.primary"
