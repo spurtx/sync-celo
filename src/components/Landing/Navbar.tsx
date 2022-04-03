@@ -59,7 +59,7 @@ function Navbar() {
         </Box>
 
         <Button
-          display={["block", "block", "none"]}
+          display={{ sm: "block", xl: "none" }}
           bg="white"
           border="none"
           _hover={{ bg: "none" }}
@@ -70,7 +70,7 @@ function Navbar() {
           <GiHamburgerMenu size="2rem" />
         </Button>
 
-        <HStack spacing={10} display={["none", "none", "flex"]}>
+        <HStack spacing={10} display={{ sm: "none", xl: "flex" }}>
           {routes.map(({ name, link }: any) => (
             <Link href={link} passHref key={name}>
               <ChakraLink
@@ -87,8 +87,8 @@ function Navbar() {
 
           <Button
             bg="white"
-            color="brand.primary"
-            borderColor="brand.primary"
+            color="brand.400"
+            borderColor="brand.400"
             borderWidth="2px"
             borderStyle="solid"
             px="1.7rem"
@@ -124,8 +124,8 @@ function Navbar() {
 
               <Button
                 bg="white"
-                color="brand.primary"
-                borderColor="brand.primary"
+                color="brand.400"
+                borderColor="brand.400"
                 borderWidth="2px"
                 borderStyle="solid"
                 px="1.7rem"

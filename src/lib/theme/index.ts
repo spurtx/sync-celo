@@ -11,12 +11,13 @@ const theme = extendTheme({
       dark: "#171725",
     },
     brand: {
-      primary: "#00A15D",
+      400: "#00A15D",
+      100: "#dceee6",
     },
   },
   fonts: {
-    body: "Open-Sans, system-ui",
-    heading: "Open-Sans, system-ui",
+    body: "Poppins, system-ui",
+    heading: "Poppins, system-ui",
   },
   fontSizes: {
     xxs: "0.62rem",
@@ -40,6 +41,10 @@ const theme = extendTheme({
     medium: 500,
     semibold: 600,
     bold: 700,
+  },
+  breakpoints: {
+    sm: "360px",
+    xl: "950px",
   },
 });
 
