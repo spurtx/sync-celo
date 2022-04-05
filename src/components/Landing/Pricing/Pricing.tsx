@@ -30,16 +30,18 @@ export default function PricingSection() {
       <Box
         transform="rotate(180deg)"
         position="absolute"
-        bottom="-100px"
+        bottom={{ sm: "-50px", xl: "-100px" }}
+        display={{ sm: "none", xl: "block" }}
         left="0px"
         w="100%"
+        h={{ sm: "50px", xl: "100px" }}
       >
         <svg
           id="bigHalfCircle"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="100"
+          height="100%"
           viewBox="0 0 100 100"
           fill="rgba(0, 161, 93, 0.1)"
           preserveAspectRatio="none"
@@ -92,7 +94,7 @@ export default function PricingSection() {
 
       <Tabs colorScheme="gray">
         <RadioGroup defaultValue="monthly">
-          <TabList border="none" mt="3rem" mb="2rem" justifyContent="center">
+          <TabList border="none" my="3rem" justifyContent="center">
             <Tab
               border="none"
               _focus={{ border: "none" }}
@@ -127,7 +129,7 @@ export default function PricingSection() {
 
         <TabPanels>
           {plansData.map((plan: any) => (
-            <TabPanel key={plan.id}>
+            <TabPanel p="0px" key={plan.id}>
               <PricingCard plan={plan} />
             </TabPanel>
           ))}

@@ -3,13 +3,9 @@ import {
   Box,
   Heading,
   Text,
-  Tag,
-  Radio,
-  RadioGroup,
   Link as ChakraLink,
   Stack,
   Image,
-  Button,
   IconButton,
   UnorderedList,
   ListItem,
@@ -35,13 +31,14 @@ function LandingFooter() {
         top="-1px"
         left="0px"
         w="100%"
+        h={{ sm: "50px", xl: "100px" }}
       >
         <svg
           id="bigHalfCircle"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="100"
+          height="100%"
           viewBox="0 0 100 100"
           fill="white"
           preserveAspectRatio="none"
@@ -50,10 +47,13 @@ function LandingFooter() {
         </svg>
       </Box>
 
-      <Box mt="6rem">
+      <Box mt={{ sm: "3rem", xl: "6rem" }}>
         <Stack direction={{ sm: "column", xl: "row" }} spacing={20}>
           <Box w={{ sm: "100%", xl: "30%" }}>
-            <Stack direction="column" alignItems="flex-end">
+            <Stack
+              direction="column"
+              alignItems={{ sm: "flex-start", xl: "flex-end" }}
+            >
               <Box mb="3rem">
                 <Image
                   src="/images/footer_logo.png"
@@ -64,6 +64,14 @@ function LandingFooter() {
               </Box>
 
               <Box>
+                <IconButton
+                  bg="#fcfcfd49"
+                  size="sm"
+                  borderRadius="50%"
+                  mx="1rem"
+                  aria-label="Search database"
+                  icon={<BsGoogle />}
+                />
                 <IconButton
                   bg="#fcfcfd49"
                   size="sm"
@@ -86,14 +94,6 @@ function LandingFooter() {
                   aria-label="Search database"
                   icon={<BsLinkedin />}
                 />
-                <IconButton
-                  bg="#fcfcfd49"
-                  size="sm"
-                  borderRadius="50%"
-                  mx="1rem"
-                  aria-label="Search database"
-                  icon={<BsGoogle />}
-                />
               </Box>
             </Stack>
           </Box>
@@ -103,107 +103,117 @@ function LandingFooter() {
             spacing={20}
             flexGrow={1}
           >
-            <Box color="white">
-              <Heading fontSize="md" fontWeight="medium">
-                Product
-              </Heading>
+            <Stack direction="row" spacing={20}>
+              <Box color="white">
+                <Heading fontSize="md" fontWeight="medium">
+                  Product
+                </Heading>
 
-              <UnorderedList
-                listStyleType="none"
-                m="0px"
-                fontSize="sm"
-                mt="2rem"
-                spacing={6}
-                fontWeight={400}
-                opacity="0.9"
-                textTransform="capitalize"
-              >
-                {productRoutes.map((item: any) => (
-                  <ListItem key={item.title}>
-                    <Link href={item.link} passHref>
-                      <ChakraLink>{item.title}</ChakraLink>
-                    </Link>
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            </Box>
+                <UnorderedList
+                  listStyleType="none"
+                  m="0px"
+                  fontSize="sm"
+                  fontWeight={400}
+                  opacity="0.9"
+                  mt="2rem"
+                  spacing={6}
+                  textTransform="capitalize"
+                >
+                  {productRoutes.map((item: any) => (
+                    <ListItem key={item.title}>
+                      <Link href={item.link} passHref>
+                        <ChakraLink>{item.title}</ChakraLink>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
 
-            <Box color="white">
-              <Heading fontSize="md" fontWeight="medium">
-                Services
-              </Heading>
+              <Box color="white">
+                <Heading fontSize="md" fontWeight="medium">
+                  Services
+                </Heading>
 
-              <UnorderedList
-                listStyleType="none"
-                m="0px"
-                fontSize="sm"
-                mt="2rem"
-                spacing={6}
-                fontWeight={400}
-                opacity="0.9"
-                textTransform="capitalize"
-              >
-                {servicesRoutes.map((item: any) => (
-                  <ListItem key={item.title}>
-                    <Link href={item.link} passHref>
-                      <ChakraLink>{item.title}</ChakraLink>
-                    </Link>
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            </Box>
+                <UnorderedList
+                  listStyleType="none"
+                  m="0px"
+                  fontSize="sm"
+                  mt="2rem"
+                  spacing={6}
+                  fontWeight={400}
+                  opacity="0.9"
+                  textTransform="capitalize"
+                >
+                  {servicesRoutes.map((item: any) => (
+                    <ListItem key={item.title}>
+                      <Link href={item.link} passHref>
+                        <ChakraLink>{item.title}</ChakraLink>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
+            </Stack>
 
-            <Box color="white">
-              <Heading fontSize="md" fontWeight="medium">
-                Company
-              </Heading>
+            <Stack direction="row" spacing={20}>
+              <Box color="white">
+                <Heading fontSize="md" fontWeight="medium">
+                  Company
+                </Heading>
 
-              <UnorderedList
-                listStyleType="none"
-                m="0px"
-                fontSize="sm"
-                mt="2rem"
-                spacing={6}
-                fontWeight={400}
-                opacity="0.9"
-                textTransform="capitalize"
-              >
-                {companyRoutes.map((item: any) => (
-                  <ListItem key={item.title}>
-                    <Link href={item.link} passHref>
-                      <ChakraLink>{item.title}</ChakraLink>
-                    </Link>
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            </Box>
+                <UnorderedList
+                  listStyleType="none"
+                  m="0px"
+                  fontSize="sm"
+                  mt="2rem"
+                  spacing={6}
+                  fontWeight={400}
+                  opacity="0.9"
+                  textTransform="capitalize"
+                >
+                  {companyRoutes.map((item: any) => (
+                    <ListItem key={item.title}>
+                      <Link href={item.link} passHref>
+                        <ChakraLink>{item.title}</ChakraLink>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
 
-            <Box color="white">
-              <Heading fontSize="md" fontWeight="medium">
-                More
-              </Heading>
+              <Box color="white">
+                <Heading fontSize="md" fontWeight="medium">
+                  More
+                </Heading>
 
-              <UnorderedList
-                listStyleType="none"
-                m="0px"
-                fontSize="sm"
-                mt="2rem"
-                spacing={6}
-                fontWeight={400}
-                opacity="0.9"
-                textTransform="capitalize"
-              >
-                {moreRoutes.map((item: any) => (
-                  <ListItem key={item.title}>
-                    <Link href={item.link} passHref>
-                      <ChakraLink>{item.title}</ChakraLink>
-                    </Link>
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            </Box>
+                <UnorderedList
+                  listStyleType="none"
+                  m="0px"
+                  fontSize="sm"
+                  mt="2rem"
+                  spacing={6}
+                  fontWeight={400}
+                  opacity="0.9"
+                  textTransform="capitalize"
+                >
+                  {moreRoutes.map((item: any) => (
+                    <ListItem key={item.title}>
+                      <Link href={item.link} passHref>
+                        <ChakraLink>{item.title}</ChakraLink>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
+            </Stack>
           </Stack>
         </Stack>
+      </Box>
+
+      <Box mt={{ sm: "5rem", xl: "10rem" }} mb="2rem" textAlign="center">
+        <Text color="white" fontSize="sm" fontWeight={400} opacity="0.9">
+          Copyright © 2021 Spurt X!
+        </Text>
       </Box>
     </Box>
   );

@@ -19,7 +19,12 @@ function PricingCard({ plan }: Props) {
   const { member, partner } = plan;
 
   return (
-    <HStack spacing={8} justifyContent="center">
+    <HStack
+      flexDirection={{ sm: "column", xl: "row" }}
+      spacing={{ sm: 0, xl: 8 }}
+      justifyContent="center"
+      alignItems="center"
+    >
       {member.map((item: any) => (
         <Box
           key={item.price}
@@ -32,6 +37,7 @@ function PricingCard({ plan }: Props) {
           bgColor="white"
           px="1.2rem"
           py="2rem"
+          mb={{ sm: "4rem", xl: "0rem" }}
           position="relative"
         >
           <Box d="flex" alignItems="center" mb="1rem">
