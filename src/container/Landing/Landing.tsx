@@ -7,6 +7,9 @@ import {
   SectionTwo,
   SectionThree,
   Reviews,
+  PricingSection,
+  Faq,
+  LandingFooter,
 } from "../../components/Landing";
 
 function Landing() {
@@ -31,6 +34,18 @@ function Landing() {
 
       <Box>
         <Reviews />
+      </Box>
+
+      <Box>
+        <PricingSection />
+      </Box>
+
+      <Box>
+        <Faq />
+      </Box>
+
+      <Box>
+        <LandingFooter />
       </Box>
     </Box>
   );

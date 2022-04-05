@@ -4,3 +4,6 @@ export { default as SectionOne } from "./SectionOne";
 export { default as SectionTwo } from "./SectionTwo";
 export { default as SectionThree } from "./SectionThree";
 export { default as Reviews } from "./Reviews";
+export { default as PricingSection } from "./Pricing/Pricing";
+export { default as Faq } from "./Faq";
+export { default as LandingFooter } from "./LandingFooter";

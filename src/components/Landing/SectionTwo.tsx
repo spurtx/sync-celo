@@ -34,7 +34,7 @@ export default function SectionTwo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="120"
+          height="100"
           viewBox="0 0 100 100"
           fill="white"
           preserveAspectRatio="none"
@@ -47,7 +47,7 @@ export default function SectionTwo() {
       <Box
         transform="rotate(180deg)"
         position="absolute"
-        bottom="-119px"
+        bottom="-100px"
         left="0px"
         w="100%"
       >
@@ -56,7 +56,7 @@ export default function SectionTwo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="120"
+          height="100"
           viewBox="0 0 100 100"
           fill="#00A15D"
           preserveAspectRatio="none"
