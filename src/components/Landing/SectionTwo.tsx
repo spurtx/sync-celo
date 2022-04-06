@@ -16,7 +16,7 @@ export default function SectionTwo() {
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
       mb="200px"

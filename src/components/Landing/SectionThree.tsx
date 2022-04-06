@@ -4,7 +4,7 @@ export default function SectionThree() {
   return (
     <Box
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       h="70vh"
     >

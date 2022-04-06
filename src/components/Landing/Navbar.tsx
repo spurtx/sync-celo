@@ -44,7 +44,7 @@ function Navbar() {
 
   return (
     <Box
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       pt="2rem"
       px={["1rem", "1rem", "3rem"]}

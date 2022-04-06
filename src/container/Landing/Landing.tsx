@@ -16,7 +16,7 @@ function Landing() {
   return (
     <Box>
       <Navbar />
-      <Box position="relative" maxW={"min(100%,1420px)"} mx="auto">
+      <Box position="relative" maxW={"min(100%,1950px)"} mx="auto">
         <HeroSection />
       </Box>
 

@@ -15,8 +15,6 @@ function Hero() {
     <Box
       mb={{ sm: "100px", xl: "400px" }}
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
-      mx="auto"
       mt="5rem"
     >
       {/* TODO: LOOK FOR BETTER WAY TO CURVE LINEAR GRADIENT  */}
@@ -117,12 +115,15 @@ function Hero() {
                 height="200px"
               />
             </Box>
-            <Box position="absolute" bottom="-80px" left="-0px">
+            <Box position="absolute" bottom="-60px" right="340px">
               <Image
                 src="/images/DailyProgress.png"
                 alt="sync logo"
                 height="200px"
               />
+            </Box>
+            <Box position="absolute" bottom="90px" right="400px" zIndex="-1">
+              <Image src="/images/pattern.png" alt="sync logo" height="100px" />
             </Box>
 
             <Box position="absolute" top="110px" right="-20px" zIndex="-1">

@@ -17,7 +17,7 @@ export default function Faq() {
       pb="90px"
       mt="200px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
     >
       <Box mb="3rem" textAlign="center" mt="4rem">

@@ -22,7 +22,7 @@ export default function PricingSection() {
       pb="90px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
       bg=" linear-gradient(180deg, rgba(0, 161, 93, 0.0001) 30.73%, rgba(0, 161, 93, 0.1) 92.71%)"

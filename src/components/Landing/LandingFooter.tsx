@@ -20,7 +20,7 @@ function LandingFooter() {
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
     >
@@ -52,13 +52,13 @@ function LandingFooter() {
           <Box w={{ sm: "100%", xl: "30%" }}>
             <Stack
               direction="column"
-              alignItems={{ sm: "flex-start", xl: "flex-end" }}
+              alignItems={["flex-start", "center", "flex-end"]}
             >
               <Box mb="3rem">
                 <Image src="/images/footer_logo.png" alt="sync logo" />
               </Box>
 
-              <Box>
+              <Box color="white">
                 <IconButton
                   bg="#fcfcfd49"
                   size="sm"
@@ -93,11 +93,7 @@ function LandingFooter() {
             </Stack>
           </Box>
 
-          <Stack
-            direction={{ sm: "column", xl: "row" }}
-            spacing={20}
-            flexGrow={1}
-          >
+          <Stack direction={["column", "row"]} spacing={20} flexGrow={1}>
             <Stack direction="row" spacing={20}>
               <Box color="white">
                 <Heading fontSize="md" fontWeight="medium">
