@@ -17,7 +17,7 @@ function SectionOne() {
       px={{ sm: "1rem", xl: "3rem" }}
       mb="130px"
       mt="3rem"
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
     >
       <Box textAlign="center">

@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineClear } from "react-icons/md";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -43,7 +44,7 @@ function Navbar() {
 
   return (
     <Box
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       pt="2rem"
       px={["1rem", "1rem", "3rem"]}
@@ -105,8 +106,22 @@ function Navbar() {
       {/* for mobile  */}
       <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent pt="4rem">
+        <DrawerContent>
           <DrawerBody>
+            <HStack my="2rem" justifyContent="space-between">
+              <Box>
+                <Image
+                  src="/images/logo.png"
+                  alt="sync logo"
+                  width="90px"
+                  height="30px"
+                />
+              </Box>
+
+              <Button bg="none">
+                <MdOutlineClear fontSize="1.5rem" />
+              </Button>
+            </HStack>
             <VStack spacing={10}>
               {routes.map(({ name, link }: any) => (
                 <Link href={link} passHref key={name}>

@@ -16,7 +16,7 @@ export default function SectionTwo() {
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1420px)"}
+      maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
       mb="200px"
@@ -28,13 +28,14 @@ export default function SectionTwo() {
         top="-1px"
         left="0px"
         w="100%"
+        h={{ sm: "50px", xl: "100px" }}
       >
         <svg
           id="bigHalfCircle"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="120"
+          height="100%"
           viewBox="0 0 100 100"
           fill="white"
           preserveAspectRatio="none"
@@ -47,16 +48,17 @@ export default function SectionTwo() {
       <Box
         transform="rotate(180deg)"
         position="absolute"
-        bottom="-119px"
+        bottom={{ sm: "-48px", xl: "-98px" }}
         left="0px"
         w="100%"
+        h={{ sm: "50px", xl: "100px" }}
       >
         <svg
           id="bigHalfCircle"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"
-          height="120"
+          height="100%"
           viewBox="0 0 100 100"
           fill="#00A15D"
           preserveAspectRatio="none"
