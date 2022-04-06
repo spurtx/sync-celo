@@ -55,12 +55,7 @@ function LandingFooter() {
               alignItems={{ sm: "flex-start", xl: "flex-end" }}
             >
               <Box mb="3rem">
-                <Image
-                  src="/images/footer_logo.png"
-                  alt="sync logo"
-                  //   width={["130px", "130px", "230px"]}
-                  //   height={["40px", "40px", "70px"]}
-                />
+                <Image src="/images/footer_logo.png" alt="sync logo" />
               </Box>
 
               <Box>

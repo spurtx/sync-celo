@@ -53,7 +53,7 @@ export default function Faq() {
         <Accordion allowToggle>
           {faqData.map((faq: any) => (
             <AccordionItem
-              key={faq}
+              key={faq.id}
               border="1px solid #171B1E"
               borderRadius="xl"
               mb="1.2rem"
@@ -112,27 +112,32 @@ export default function Faq() {
 
 const faqData = [
   {
+    id: 1,
     question: "How do I sign up on Spurt X!?",
     answer:
       "Setup the tools that enable you work efficiently, You can pick from the existing integrations we have connect at least one to proceed..Setup the tools that enable you work efficiently,",
   },
   {
+    id: 2,
     question:
       "What’s the difference between a Consultant Member and a Consultant Partner?",
     answer:
       "Setup the tools that enable you work efficiently, You can pick from the existing integrations we have connect at least one to proceed..Setup the tools that enable you work efficiently,",
   },
   {
+    id: 3,
     question: "How do I create a project?",
     answer:
       "Setup the tools that enable you work efficiently, You can pick from the existing integrations we have connect at least one to proceed..Setup the tools that enable you work efficiently,",
   },
   {
+    id: 4,
     question: "How do I create a Bid?",
     answer:
       "Setup the tools that enable you work efficiently, You can pick from the existing integrations we have connect at least one to proceed..Setup the tools that enable you work efficiently,",
   },
   {
+    id: 5,
     question: "How Do I Withdraw Funds?",
     answer:
       "Setup the tools that enable you work efficiently, You can pick from the existing integrations we have connect at least one to proceed..Setup the tools that enable you work efficiently,",
