@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Box,
   HStack,
@@ -15,9 +15,20 @@ import {
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClear } from "react-icons/md";
+import { gsap } from "gsap";
 
 function Navbar() {
+  const navRef: any = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    gsap.timeline().from(navRef.current, {
+      opacity: 0,
+      y: -10,
+      duration: 1,
+      ease: "slow(0.7, 0.7, false)",
+    });
+  }, []);
 
   const routes = [
     {
@@ -49,7 +60,7 @@ function Navbar() {
       mx="auto"
       pt="2rem"
     >
-      <HStack justifyContent="space-between">
+      <HStack ref={navRef} justifyContent="space-between">
         <Box>
           <Image
             src="/images/logo.png"

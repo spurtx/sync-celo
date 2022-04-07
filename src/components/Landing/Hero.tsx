@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Box,
   HStack,
@@ -10,8 +10,81 @@ import {
   Show,
 } from "@chakra-ui/react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { gsap } from "gsap";
 
 function Hero() {
+  const headingRef: any = useRef();
+  const textRef: any = useRef();
+  const buttonRef: any = useRef();
+  const macbookRef: any = useRef();
+  const teamcardRef: any = useRef();
+  const progressRef: any = useRef();
+  const patternRef: any = useRef();
+
+  useEffect(() => {
+    gsap
+      .timeline()
+      .from(headingRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "slow(0.7, 0.7, false)",
+      })
+      .from(
+        textRef.current,
+        {
+          opacity: 0,
+          y: 30,
+          duration: 1,
+          ease: "slow(0.7, 0.7, false)",
+        },
+        "-=1"
+      )
+      .from(
+        buttonRef.current,
+        {
+          opacity: 0,
+          y: 30,
+          duration: 1,
+          ease: "slow(0.7, 0.7, false)",
+        },
+        "-=0.9"
+      )
+      .from(
+        macbookRef.current,
+        {
+          opacity: 0,
+          x: 20,
+          y: -20,
+          duration: 1,
+        },
+        "-=0.8"
+      )
+      .from(
+        teamcardRef.current,
+        {
+          opacity: 0,
+          x: 20,
+          duration: 1,
+        },
+        "-=0.7"
+      )
+      .from(
+        patternRef.current,
+        {
+          opacity: 0,
+          x: 20,
+          duration: 1,
+        },
+        "-=0.7"
+      )
+      .from(progressRef.current, {
+        opacity: 0,
+        x: 20,
+        duration: 1,
+      });
+  }, []);
+
   return (
     <Box
       maxW={"min(100%,1500px)"}
@@ -25,9 +98,10 @@ function Hero() {
         <Box flex="1 1 0px">
           <Box
             textAlign={{ sm: "center", lg: "left" }}
-            w={{ sm: "100%", lg: "75%" }}
+            w={{ sm: "100%", lg: "80%" }}
           >
             <Heading
+              ref={headingRef}
               color="text.gray"
               fontSize={{ sm: "2xl", lg: "3xl", xl: "5xl" }}
             >
@@ -40,6 +114,7 @@ function Hero() {
               fontWeight="normal"
               lineHeight="1.4rem"
               my="1rem"
+              ref={textRef}
             >
               Collaborating on projects has never been
               <Show above="xl">
@@ -51,6 +126,7 @@ function Hero() {
           </Box>
 
           <Stack
+            ref={buttonRef}
             justifyContent={{ md: "center", lg: "flex-start" }}
             direction={{ sm: "column", md: "row" }}
             spacing={5}
@@ -114,6 +190,7 @@ function Hero() {
 
           <Box position="relative" h="100%">
             <Box
+              ref={macbookRef}
               position="absolute"
               bottom={{ lg: "-90px", xl: "-140px" }}
               right={{ lg: "0px", xl: "-20px" }}
@@ -121,7 +198,9 @@ function Hero() {
             >
               <Image src="/images/macbook.png" alt="sync logo" height="100%" />
             </Box>
+
             <Box
+              ref={teamcardRef}
               position="absolute"
               bottom={{ lg: "-70px", xl: "-120px" }}
               h={{ lg: "130px", xl: "200px" }}
@@ -133,7 +212,9 @@ function Hero() {
                 height="100%"
               />
             </Box>
+
             <Box
+              ref={progressRef}
               position="absolute"
               bottom="-60px"
               right={{ lg: "240px", xl: "340px" }}
@@ -146,6 +227,7 @@ function Hero() {
               />
             </Box>
             <Box
+              ref={patternRef}
               position="absolute"
               bottom={{ sm: "60px", xl: "90px" }}
               right={{ sm: "280px", xl: "400px" }}
