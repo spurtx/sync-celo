@@ -71,7 +71,7 @@ export default function Reviews() {
 
   const responsive = {
     0: {
-      items: 1.2,
+      items: 1.1,
     },
     600: {
       items: 2,
