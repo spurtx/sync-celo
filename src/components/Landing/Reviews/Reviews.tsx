@@ -33,64 +33,19 @@ export default function Reviews() {
 
   return (
     <Box
-      bgColor="brand.400"
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1950px)"}
+      // maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
     >
-      {/* top curve svg */}
-      <Box
-        transform="rotate(180deg)"
-        position="absolute"
-        top="-1px"
-        left="0px"
-        w="100%"
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100"
-          viewBox="0 0 100 100"
-          fill="white"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
-      {/* bottom curve svg */}
-      <Box
-        position="absolute"
-        bottom="-1px"
-        left="0px"
-        w="100%"
-        h={{ sm: "50px", xl: "100px" }}
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="white"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
       <Box textAlign="center" mb="5rem" mt="4rem">
         <Tag
           color="white"
           size="lg"
           borderRadius="1.4rem"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           py="10px"
           px="20px"
           bgColor="rgba(255, 255, 255, 0.5)"
@@ -99,13 +54,13 @@ export default function Reviews() {
           REVIEWS
         </Tag>
 
-        <Heading color="white" fontSize="3xl" my="1.2rem">
+        <Heading color="white" fontSize={{ sm: "xl", lg: "3xl" }} my="1.2rem">
           Spurt! loved by all users
         </Heading>
 
         <Text
           color="white"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
           lineHeight="1.5rem"
         >
@@ -131,6 +86,7 @@ export default function Reviews() {
           Read all Reviews
         </Button>
       </Box>
+
       <OwlCarousel
         className="owl-theme"
         loop
@@ -139,7 +95,7 @@ export default function Reviews() {
         dots={false}
         autoplay={true}
         fluidSpeed={3000}
-        autoplayTimeout={5000}
+        autoplayTimeout={6000}
         autoplaySpeed={2000}
         animateIn={true}
         smartSpeed={400}
@@ -161,7 +117,7 @@ export default function Reviews() {
           dots={false}
           autoplay={true}
           fluidSpeed={3000}
-          autoplayTimeout={4000}
+          autoplayTimeout={5000}
           autoplaySpeed={2000}
           animateIn={true}
           responsive={responsive}

@@ -43,8 +43,11 @@ const theme = extendTheme({
     bold: 700,
   },
   breakpoints: {
-    sm: "360px",
-    xl: "950px",
+    sm: "320px",
+    md: "481px",
+    lg: "869",
+    xl: "1120px",
+    "2xl": "1500px",
   },
 });
 

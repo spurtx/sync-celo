@@ -14,19 +14,18 @@ import { BsArrowRightShort } from "react-icons/bs";
 function SectionOne() {
   return (
     <Box
-      px={{ sm: "1rem", xl: "3rem" }}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mb="130px"
       mt="3rem"
-      maxW={"min(100%,1950px)"}
       mx="auto"
     >
       <Box textAlign="center">
         <Tag
           color="brand.400"
-          size="lg"
           borderRadius="1.4rem"
-          fontSize="sm"
-          py="10px"
+          fontSize={{ sm: "xs", lg: "sm" }}
+          py="8px"
           px="20px"
           bgColor="brand.100"
           fontWeight="medium"
@@ -34,19 +33,26 @@ function SectionOne() {
           BECOME A CONSULTANT PARTNER
         </Tag>
 
-        <Heading color="text.gray" fontSize="2xl" my="1.2rem">
+        <Heading
+          color="text.gray"
+          fontSize={{ sm: "xl", lg: "3xl" }}
+          my="1.2rem"
+        >
           Create Projects, Gigs & Bids
         </Heading>
 
         <Text
           color="text.secondary"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
-          lineHeight="1.5rem"
+          lineHeight={{ sm: "1.2rem", lg: "0.8rem" }}
         >
           Setup the tools that enable you work efficiently. You can pick from
-          the existing <br /> integrations we have connect at least one to
-          proceed.
+          the existing
+          <Box display={{ sm: "none", lg: "block" }}>
+            <br />
+          </Box>
+          integrations we have connect at least one to proceed.
         </Text>
       </Box>
 

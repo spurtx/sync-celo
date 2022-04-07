@@ -24,35 +24,16 @@ function LandingFooter() {
       mx="auto"
       position="relative"
     >
-      {/* top curve svg */}
-      <Box
-        transform="rotate(180deg)"
-        position="absolute"
-        top="-1px"
-        left="0px"
-        w="100%"
-        h={{ sm: "50px", xl: "100px" }}
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="white"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
       <Box mt={{ sm: "3rem", xl: "6rem" }}>
-        <Stack direction={{ sm: "column", xl: "row" }} spacing={20}>
-          <Box w={{ sm: "100%", xl: "30%" }}>
+        <Stack
+          direction={{ sm: "column", xl: "row" }}
+          spacing={20}
+          alignItems="start"
+        >
+          <Box w={{ sm: "100%", lg: "30%" }}>
             <Stack
               direction="column"
-              alignItems={["flex-start", "center", "flex-end"]}
+              alignItems={{ sm: "flex-start", md: "center", lg: "flex-end" }}
             >
               <Box mb="3rem">
                 <Image src="/images/footer_logo.png" alt="sync logo" />
@@ -93,7 +74,11 @@ function LandingFooter() {
             </Stack>
           </Box>
 
-          <Stack direction={["column", "row"]} spacing={20} flexGrow={1}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={20}
+            flexGrow={1}
+          >
             <Stack direction="row" spacing={20}>
               <Box color="white">
                 <Heading fontSize="md" fontWeight="medium">

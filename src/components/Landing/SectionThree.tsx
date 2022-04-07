@@ -3,10 +3,10 @@ import { Box, Center, Text, Tag, Heading } from "@chakra-ui/react";
 export default function SectionThree() {
   return (
     <Box
-      px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1950px)"}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
-      h="70vh"
+      h="50vh"
     >
       <Center h="100%">
         <Box textAlign="center" maxW="400px" h="300px">
@@ -14,7 +14,7 @@ export default function SectionThree() {
             color="brand.400"
             size="lg"
             borderRadius="1.4rem"
-            fontSize="sm"
+            fontSize={{ sm: "xs", lg: "sm" }}
             py="10px"
             px="20px"
             bgColor="brand.100"
@@ -23,7 +23,11 @@ export default function SectionThree() {
             Integrations
           </Tag>
 
-          <Heading color="text.gray" fontSize="2xl" my="1.2rem">
+          <Heading
+            color="text.gray"
+            fontSize={{ sm: "xl", lg: "3xl" }}
+            my="1.2rem"
+          >
             Seamless integrations with other payment tools
           </Heading>
 
