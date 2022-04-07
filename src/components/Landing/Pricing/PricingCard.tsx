@@ -68,7 +68,6 @@ function PricingCard({ plan }: Props) {
           py="2rem"
           mb={{ sm: "4rem", xl: "0rem" }}
           position="relative"
-          className="card_1trigger"
           ref={card_1Ref}
         >
           <Box d="flex" alignItems="center" mb="1rem">
@@ -89,6 +88,7 @@ function PricingCard({ plan }: Props) {
             fontWeight="300"
             fontSize="sm"
             mt="1rem"
+            className="card_1trigger"
             lineHeight="1.4rem"
           >
             {item.description}
@@ -148,7 +148,6 @@ function PricingCard({ plan }: Props) {
           px="1.2rem"
           py="2rem"
           position="relative"
-          className="card_2trigger"
           ref={card_2Ref}
         >
           <Box d="flex" alignItems="center" mb="1rem">
@@ -170,6 +169,7 @@ function PricingCard({ plan }: Props) {
             fontSize="sm"
             mt="1rem"
             lineHeight="1.4rem"
+            className="card_2trigger"
           >
             {item.description}{" "}
           </Text>
