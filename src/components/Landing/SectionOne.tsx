@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Box,
   Tag,
@@ -10,8 +10,62 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function SectionOne() {
+  const textRef: any = useRef();
+  const headRef: any = useRef();
+  const tagRef: any = useRef();
+  const columnRef: any = useRef();
+
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger",
+      },
+    });
+
+    gsap.from(headRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.7,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger",
+      },
+    });
+
+    gsap.from(tagRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger",
+      },
+    });
+
+    gsap.from(columnRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".column_trigger",
+      },
+    });
+  });
+
   return (
     <Box
       maxW={"min(100%,1500px)"}
@@ -29,6 +83,7 @@ function SectionOne() {
           px="20px"
           bgColor="brand.100"
           fontWeight="medium"
+          ref={tagRef}
         >
           BECOME A CONSULTANT PARTNER
         </Tag>
@@ -37,11 +92,14 @@ function SectionOne() {
           color="text.gray"
           fontSize={{ sm: "xl", lg: "3xl" }}
           my="1.2rem"
+          className="trigger"
+          ref={headRef}
         >
           Create Projects, Gigs & Bids
         </Heading>
 
         <Text
+          ref={textRef}
           color="text.secondary"
           fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
@@ -60,6 +118,8 @@ function SectionOne() {
         <SimpleGrid
           columns={{ sm: 1, lg: 2, xl: 4 }}
           spacing={{ sm: 20, xl: 5 }}
+          ref={columnRef}
+          className="column_trigger"
         >
           {data.map((item) => (
             <Box key={item.title} textAlign="center" px="1rem">

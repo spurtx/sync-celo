@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import {
   Box,
   Heading,
@@ -8,11 +9,88 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { GoPrimitiveDot } from "react-icons/go";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function SectionTwo() {
+  const textRef: any = useRef();
+  const headRef: any = useRef();
+  const tagRef: any = useRef();
+  const leftColumnRef: any = useRef();
+  const rightColumnRef: any = useRef();
+  const phoneRef: any = useRef();
+
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_2",
+      },
+    });
+
+    gsap.from(headRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.7,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_2",
+      },
+    });
+
+    gsap.from(tagRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_2",
+      },
+    });
+
+    gsap.from(leftColumnRef.current, {
+      opacity: 0,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      transform: "rotate(-15deg)",
+      scrollTrigger: {
+        trigger: ".columnTrigger",
+      },
+    });
+
+    gsap.from(rightColumnRef.current, {
+      opacity: 0,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      transform: "rotate(15deg)",
+      scrollTrigger: {
+        trigger: ".columnTrigger",
+      },
+    });
+
+    gsap.from(phoneRef.current, {
+      opacity: 0,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      y: 100,
+      scrollTrigger: {
+        trigger: ".columnTrigger",
+      },
+    });
+  });
+
   return (
     <Box
-      // bgColor="brand.400"
       pb="50px"
       pt="100px"
       maxW={"min(100%,1500px)"}
@@ -31,15 +109,23 @@ export default function SectionTwo() {
           px="20px"
           bgColor="rgba(255, 255, 255, 0.5)"
           fontWeight="medium"
+          ref={tagRef}
         >
           BECOME A CONSULTANT PARTNER
         </Tag>
 
-        <Heading color="white" fontSize={{ sm: "xl", lg: "3xl" }} my="1.2rem">
+        <Heading
+          color="white"
+          fontSize={{ sm: "xl", lg: "3xl" }}
+          my="1.2rem"
+          className="trigger_2"
+          ref={headRef}
+        >
           Apply, Join Projects & Get Paid
         </Heading>
 
         <Text
+          ref={textRef}
           color="white"
           fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
@@ -58,6 +144,7 @@ export default function SectionTwo() {
         alignItems="center"
       >
         <Box
+          ref={leftColumnRef}
           flex="1 1 0px"
           textAlign={{ sm: "center", lg: "right" }}
           d="flex"
@@ -77,7 +164,11 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
+          <Box
+            w={{ sm: "100%", xl: "75%" }}
+            mb="4rem"
+            className="columnTrigger"
+          >
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
@@ -104,7 +195,7 @@ export default function SectionTwo() {
           </Box>
         </Box>
 
-        <Box flex="1 1 0px">
+        <Box flex="1 1 0px" ref={phoneRef}>
           <Center>
             <Box>
               <Image
@@ -117,7 +208,11 @@ export default function SectionTwo() {
           </Center>
         </Box>
 
-        <Box flex="1 1 0px" textAlign={{ sm: "center", lg: "left" }}>
+        <Box
+          ref={rightColumnRef}
+          flex="1 1 0px"
+          textAlign={{ sm: "center", lg: "left" }}
+        >
           <Box
             w={{ sm: "100%", lg: "75%" }}
             mb="4rem"
