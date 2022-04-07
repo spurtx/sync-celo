@@ -20,8 +20,8 @@ function PricingCard({ plan }: Props) {
 
   return (
     <HStack
-      flexDirection={{ sm: "column", xl: "row" }}
-      spacing={{ sm: 0, xl: 8 }}
+      flexDirection={{ sm: "column", lg: "row" }}
+      spacing={{ sm: 0, lg: 8 }}
       justifyContent="center"
       alignItems="center"
     >

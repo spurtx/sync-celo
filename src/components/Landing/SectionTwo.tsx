@@ -12,67 +12,21 @@ import { GoPrimitiveDot } from "react-icons/go";
 export default function SectionTwo() {
   return (
     <Box
-      bgColor="brand.400"
+      // bgColor="brand.400"
       pb="50px"
       pt="100px"
-      px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1950px)"}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       position="relative"
       mb="200px"
     >
-      {/* top curve svg */}
-      <Box
-        transform="rotate(180deg)"
-        position="absolute"
-        top="-1px"
-        left="0px"
-        w="100%"
-        h={{ sm: "50px", xl: "100px" }}
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="white"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
-      {/* bottom curve svg  */}
-      <Box
-        transform="rotate(180deg)"
-        position="absolute"
-        bottom={{ sm: "-48px", xl: "-98px" }}
-        left="0px"
-        w="100%"
-        h={{ sm: "50px", xl: "100px" }}
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="#00A15D"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
       <Box textAlign="center" mt="4rem">
         <Tag
           color="white"
           size="lg"
           borderRadius="1.4rem"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           py="10px"
           px="20px"
           bgColor="rgba(255, 255, 255, 0.5)"
@@ -81,13 +35,13 @@ export default function SectionTwo() {
           BECOME A CONSULTANT PARTNER
         </Tag>
 
-        <Heading color="white" fontSize="2xl" my="1.2rem">
+        <Heading color="white" fontSize={{ sm: "xl", lg: "3xl" }} my="1.2rem">
           Apply, Join Projects & Get Paid
         </Heading>
 
         <Text
           color="white"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
           lineHeight="1.5rem"
         >
@@ -99,15 +53,16 @@ export default function SectionTwo() {
 
       <HStack
         mt="5rem"
-        spacing={{ sm: 0, xl: 5 }}
-        flexDirection={{ sm: "column", xl: "row" }}
+        spacing={{ sm: 0, lg: 5 }}
+        flexDirection={{ sm: "column", lg: "row" }}
+        alignItems="center"
       >
         <Box
           flex="1 1 0px"
-          textAlign={{ sm: "center", xl: "right" }}
+          textAlign={{ sm: "center", lg: "right" }}
           d="flex"
           flexDir="column"
-          alignItems={{ sm: "flex-start", xl: "flex-end" }}
+          alignItems={{ sm: "flex-start", lg: "flex-end" }}
         >
           <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
@@ -135,7 +90,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
+          <Box w={{ sm: "100%", xl: "75%" }} mb={{ sm: "4rem", lg: "0rem" }}>
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
@@ -149,24 +104,24 @@ export default function SectionTwo() {
           </Box>
         </Box>
 
-        <Box px="2rem" flex="1 1 0px">
+        <Box flex="1 1 0px">
           <Center>
-            <Box w="90%">
+            <Box>
               <Image
                 src="/images/iphone.png"
-                width="100%"
-                // height="650px"
+                height={{ sm: "400px", lg: "460px" }}
+                width={{ sm: "220px", lg: "270px" }}
                 alt="iphone"
               />
             </Box>
           </Center>
         </Box>
 
-        <Box flex="1 1 0px" textAlign={{ sm: "center", xl: "left" }}>
+        <Box flex="1 1 0px" textAlign={{ sm: "center", lg: "left" }}>
           <Box
-            w={{ sm: "100%", xl: "75%" }}
+            w={{ sm: "100%", lg: "75%" }}
             mb="4rem"
-            mt={{ sm: "4rem", xl: "0rem" }}
+            mt={{ sm: "4rem", lg: "0rem" }}
           >
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
@@ -193,7 +148,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
+          <Box w={{ sm: "100%", xl: "75%" }}>
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>

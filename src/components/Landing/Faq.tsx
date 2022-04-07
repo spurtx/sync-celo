@@ -16,8 +16,8 @@ export default function Faq() {
     <Box
       pb="90px"
       mt="200px"
-      px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1950px)"}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
     >
       <Box mb="3rem" textAlign="center" mt="4rem">
@@ -25,7 +25,7 @@ export default function Faq() {
           color="brand.400"
           size="lg"
           borderRadius="1.4rem"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           py="10px"
           px="20px"
           bgColor="brand.100"
@@ -34,13 +34,17 @@ export default function Faq() {
           FAQ&lsquo;s
         </Tag>
 
-        <Heading color="text.gray" fontSize="2xl" my="1.2rem">
+        <Heading
+          color="text.gray"
+          fontSize={{ sm: "xl", lg: "3xl" }}
+          my="1.2rem"
+        >
           Our frequently asked questions
         </Heading>
 
         <Text
           color="text.secondary"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
           lineHeight="1.5rem"
         >
@@ -49,7 +53,7 @@ export default function Faq() {
         </Text>
       </Box>
 
-      <Box w={{ sm: "340px", xl: "750px" }} maxW="750px" mx="auto">
+      <Box maxW="750px" mx="auto">
         <Accordion allowToggle>
           {faqData.map((faq: any) => (
             <AccordionItem

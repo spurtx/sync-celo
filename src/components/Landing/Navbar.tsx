@@ -44,18 +44,18 @@ function Navbar() {
 
   return (
     <Box
-      maxW={"min(100%,1950px)"}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       pt="2rem"
-      px={["1rem", "1rem", "3rem"]}
     >
       <HStack justifyContent="space-between">
         <Box>
           <Image
             src="/images/logo.png"
             alt="sync logo"
-            width={["130px", "130px", "200px"]}
-            height={["40px", "40px", "70px"]}
+            width={["130px", "130px", "180px"]}
+            height={["40px", "40px", "60px"]}
           />
         </Box>
 
@@ -118,7 +118,7 @@ function Navbar() {
                 />
               </Box>
 
-              <Button bg="none">
+              <Button bg="none" onClick={onClose}>
                 <MdOutlineClear fontSize="1.5rem" />
               </Button>
             </HStack>

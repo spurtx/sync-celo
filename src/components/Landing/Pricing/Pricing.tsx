@@ -21,41 +21,17 @@ export default function PricingSection() {
     <Box
       pb="90px"
       pt="100px"
-      px={{ sm: "1rem", xl: "3rem" }}
-      maxW={"min(100%,1950px)"}
+      maxW={"min(100%,1500px)"}
+      px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       position="relative"
-      bg=" linear-gradient(180deg, rgba(0, 161, 93, 0.0001) 30.73%, rgba(0, 161, 93, 0.1) 92.71%)"
     >
-      <Box
-        transform="rotate(180deg)"
-        position="absolute"
-        bottom={{ sm: "-50px", xl: "-100px" }}
-        display={{ sm: "none", xl: "block" }}
-        left="0px"
-        w="100%"
-        h={{ sm: "50px", xl: "100px" }}
-      >
-        <svg
-          id="bigHalfCircle"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="rgba(0, 161, 93, 0.1)"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 100 C40 0 60 0 100 100 Z" />
-        </svg>
-      </Box>
-
       <Box textAlign="center" mt="4rem">
         <Tag
           color="brand.400"
           size="lg"
           borderRadius="1.4rem"
-          fontSize="sm"
+          fontSize={{ sm: "xs", lg: "sm" }}
           py="10px"
           px="20px"
           bgColor="brand.100"
@@ -64,7 +40,11 @@ export default function PricingSection() {
           OUR PRICING
         </Tag>
 
-        <Heading color="text.gray" fontSize="2xl" my="1.2rem">
+        <Heading
+          color="text.gray"
+          fontSize={{ sm: "xl", lg: "3xl" }}
+          my="1.2rem"
+        >
           Choose the plan <br /> that’s right for you
         </Heading>
 
