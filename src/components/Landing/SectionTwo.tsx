@@ -60,9 +60,9 @@ export default function SectionTwo() {
       ease: "slow(0.7, 0.7, false)",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(-15deg)",
+      transform: "rotate(-5deg)",
       scrollTrigger: {
-        trigger: ".columnTrigger",
+        trigger: ".leftCol",
       },
     });
 
@@ -71,9 +71,9 @@ export default function SectionTwo() {
       ease: "slow(0.7, 0.7, false)",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(15deg)",
+      transform: "rotate(5deg)",
       scrollTrigger: {
-        trigger: ".columnTrigger",
+        trigger: ".rightCol",
       },
     });
 
@@ -84,7 +84,7 @@ export default function SectionTwo() {
       duration: 1,
       y: 100,
       scrollTrigger: {
-        trigger: ".columnTrigger",
+        trigger: ".middleCol",
       },
     });
   });
@@ -164,11 +164,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box
-            w={{ sm: "100%", xl: "75%" }}
-            mb="4rem"
-            className="columnTrigger"
-          >
+          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" className="leftCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
@@ -195,7 +191,7 @@ export default function SectionTwo() {
           </Box>
         </Box>
 
-        <Box flex="1 1 0px" ref={phoneRef}>
+        <Box flex="1 1 0px" ref={phoneRef} className="middleCol">
           <Center>
             <Box>
               <Image
@@ -230,7 +226,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
+          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" className="rightCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
