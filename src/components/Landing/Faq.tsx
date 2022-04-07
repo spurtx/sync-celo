@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import {
   Box,
   Text,
@@ -10,8 +11,61 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Faq() {
+  const textRef: any = useRef();
+  const headRef: any = useRef();
+  const tagRef: any = useRef();
+  const faqRef: any = useRef();
+
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: -30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_6",
+      },
+    });
+
+    gsap.from(headRef.current, {
+      opacity: 0,
+      y: -30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.7,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_6",
+      },
+    });
+
+    gsap.from(tagRef.current, {
+      opacity: 0,
+      y: -30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_6",
+      },
+    });
+    gsap.from(faqRef.current, {
+      opacity: 0,
+      x: -30,
+      ease: "circ.in",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".faq_trigger",
+      },
+    });
+  });
+
   return (
     <Box
       pb="90px"
@@ -30,6 +84,7 @@ export default function Faq() {
           px="20px"
           bgColor="brand.100"
           fontWeight="medium"
+          ref={tagRef}
         >
           FAQ&lsquo;s
         </Tag>
@@ -38,6 +93,8 @@ export default function Faq() {
           color="text.gray"
           fontSize={{ sm: "xl", lg: "3xl" }}
           my="1.2rem"
+          ref={headRef}
+          className="trigger_6"
         >
           Our frequently asked questions
         </Heading>
@@ -47,14 +104,15 @@ export default function Faq() {
           fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
           lineHeight="1.5rem"
+          ref={textRef}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum
           nullam maecenas.
         </Text>
       </Box>
 
-      <Box maxW="750px" mx="auto">
-        <Accordion allowToggle>
+      <Box maxW="750px" mx="auto" className="faq_trigger">
+        <Accordion allowToggle ref={faqRef}>
           {faqData.map((faq: any) => (
             <AccordionItem
               key={faq.id}
