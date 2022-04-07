@@ -24,9 +24,9 @@ function Navbar() {
   useEffect(() => {
     gsap.timeline().from(navRef.current, {
       opacity: 0,
-      y: -10,
+      y: -15,
       duration: 1,
-      ease: "slow(0.7, 0.7, false)",
+      ease: "circ.in",
     });
   }, []);
 

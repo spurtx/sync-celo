@@ -13,7 +13,7 @@ export default function ReviewCard({ review }: Props) {
       //   minW="400px"
       p="1.4rem"
       minH="180px"
-      maxH="180px"
+      // maxH={{ sm: "200px", lg: "180px" }}
       boxShadow="2xl"
     >
       <HStack spacing={4}>

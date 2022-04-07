@@ -22,11 +22,12 @@ export default function Reviews() {
   const textRef: any = useRef();
   const headRef: any = useRef();
   const tagRef: any = useRef();
+  const buttonRef: any = useRef();
 
   useEffect(() => {
     gsap.from(textRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.8,
       duration: 1,
@@ -37,7 +38,7 @@ export default function Reviews() {
 
     gsap.from(headRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.7,
       duration: 1,
@@ -48,8 +49,18 @@ export default function Reviews() {
 
     gsap.from(tagRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_4",
+      },
+    });
+    gsap.from(buttonRef.current, {
+      opacity: 0,
+      x: -35,
+      ease: "circ.in",
       delay: 0.6,
       duration: 1,
       scrollTrigger: {
@@ -60,7 +71,7 @@ export default function Reviews() {
 
   const responsive = {
     0: {
-      items: 1,
+      items: 1.1,
     },
     600: {
       items: 2,
@@ -129,6 +140,7 @@ export default function Reviews() {
           fontSize="sm"
           px="1rem"
           py="1.2rem"
+          ref={buttonRef}
           _hover={{ bg: "linear-gradient(180deg, #FF8A65 0%, #FF5E4B 100%)" }}
           _active={{ bg: "linear-gradient(180deg, #FF8A65 0%, #FF5E4B 100%)" }}
           _focus={{ outline: "none" }}

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+
 import {
   Box,
   Text,
@@ -10,6 +11,9 @@ import {
   ListIcon,
 } from "@chakra-ui/react";
 import { BsArrowRightShort, BsCheck2 } from "react-icons/bs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   plan?: any;
@@ -17,6 +21,31 @@ interface Props {
 
 function PricingCard({ plan }: Props) {
   const { member, partner } = plan;
+  const card_1Ref: any = useRef();
+  const card_2Ref: any = useRef();
+
+  useEffect(() => {
+    gsap.from(card_1Ref.current, {
+      opacity: 0,
+      ease: "sine.in",
+      delay: 0.6,
+      duration: 1,
+      transform: "rotate(-10deg)",
+      scrollTrigger: {
+        trigger: ".card_1trigger",
+      },
+    });
+    gsap.from(card_2Ref.current, {
+      opacity: 0,
+      ease: "sine.in",
+      delay: 0.6,
+      duration: 1,
+      transform: "rotate(10deg)",
+      scrollTrigger: {
+        trigger: ".card_2trigger",
+      },
+    });
+  });
 
   return (
     <HStack
@@ -39,6 +68,7 @@ function PricingCard({ plan }: Props) {
           py="2rem"
           mb={{ sm: "4rem", xl: "0rem" }}
           position="relative"
+          ref={card_1Ref}
         >
           <Box d="flex" alignItems="center" mb="1rem">
             <Text color="text.gray" fontSize="4xl" fontWeight="bold">
@@ -58,6 +88,7 @@ function PricingCard({ plan }: Props) {
             fontWeight="300"
             fontSize="sm"
             mt="1rem"
+            className="card_1trigger"
             lineHeight="1.4rem"
           >
             {item.description}
@@ -117,6 +148,7 @@ function PricingCard({ plan }: Props) {
           px="1.2rem"
           py="2rem"
           position="relative"
+          ref={card_2Ref}
         >
           <Box d="flex" alignItems="center" mb="1rem">
             <Text color="brand.400" fontSize="4xl" fontWeight="bold">
@@ -137,6 +169,7 @@ function PricingCard({ plan }: Props) {
             fontSize="sm"
             mt="1rem"
             lineHeight="1.4rem"
+            className="card_2trigger"
           >
             {item.description}{" "}
           </Text>

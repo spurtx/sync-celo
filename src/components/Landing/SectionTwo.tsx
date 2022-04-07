@@ -24,7 +24,7 @@ export default function SectionTwo() {
   useEffect(() => {
     gsap.from(textRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.8,
       duration: 1,
@@ -35,7 +35,7 @@ export default function SectionTwo() {
 
     gsap.from(headRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.7,
       duration: 1,
@@ -46,7 +46,7 @@ export default function SectionTwo() {
 
     gsap.from(tagRef.current, {
       opacity: 0,
-      y: 30,
+      y: -30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.6,
       duration: 1,
@@ -151,7 +151,7 @@ export default function SectionTwo() {
           flexDir="column"
           alignItems={{ sm: "flex-start", lg: "flex-end" }}
         >
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
+          {/* <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
@@ -162,7 +162,7 @@ export default function SectionTwo() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
               placerat elementum massa turpis at.
             </Text>
-          </Box>
+          </Box> */}
 
           <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" className="leftCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
@@ -226,7 +226,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" className="rightCol">
+          {/* <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" >
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
@@ -237,9 +237,9 @@ export default function SectionTwo() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
               placerat elementum massa turpis at.
             </Text>
-          </Box>
+          </Box> */}
 
-          <Box w={{ sm: "100%", xl: "75%" }}>
+          <Box w={{ sm: "100%", xl: "75%" }} className="rightCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
