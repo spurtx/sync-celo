@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import {
   Box,
   Heading,
@@ -15,8 +17,50 @@ import {
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
 import PricingCard from "./PricingCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PricingSection() {
+  const textRef: any = useRef();
+  const headRef: any = useRef();
+  const tagRef: any = useRef();
+
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_5",
+      },
+    });
+
+    gsap.from(headRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.7,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_5",
+      },
+    });
+
+    gsap.from(tagRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_5",
+      },
+    });
+  });
+
   return (
     <Box
       pb="90px"
@@ -36,6 +80,7 @@ export default function PricingSection() {
           px="20px"
           bgColor="brand.100"
           fontWeight="medium"
+          ref={tagRef}
         >
           OUR PRICING
         </Tag>
@@ -44,6 +89,8 @@ export default function PricingSection() {
           color="text.gray"
           fontSize={{ sm: "xl", lg: "3xl" }}
           my="1.2rem"
+          ref={headRef}
+          className="trigger_5"
         >
           Choose the plan <br /> that’s right for you
         </Heading>
@@ -54,6 +101,7 @@ export default function PricingSection() {
           fontWeight="normal"
           lineHeight="1.5rem"
           display="inline-block"
+          ref={textRef}
         >
           <Text color="text.dark" fontWeight="semibold" display="inline-block">
             {" "}
