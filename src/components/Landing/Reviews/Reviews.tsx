@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 var $ = require("jquery");
 if (typeof window !== "undefined") {
@@ -9,6 +9,9 @@ if (typeof window !== "undefined") {
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import dynamic from "next/dynamic";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -16,6 +19,45 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 import { Box, Heading, Text, Tag, Button } from "@chakra-ui/react";
 
 export default function Reviews() {
+  const textRef: any = useRef();
+  const headRef: any = useRef();
+  const tagRef: any = useRef();
+
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_4",
+      },
+    });
+
+    gsap.from(headRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.7,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_4",
+      },
+    });
+
+    gsap.from(tagRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_4",
+      },
+    });
+  });
+
   const responsive = {
     0: {
       items: 1,
@@ -50,11 +92,18 @@ export default function Reviews() {
           px="20px"
           bgColor="rgba(255, 255, 255, 0.5)"
           fontWeight="medium"
+          ref={tagRef}
         >
           REVIEWS
         </Tag>
 
-        <Heading color="white" fontSize={{ sm: "xl", lg: "3xl" }} my="1.2rem">
+        <Heading
+          color="white"
+          fontSize={{ sm: "xl", lg: "3xl" }}
+          my="1.2rem"
+          className="trigger_4"
+          ref={headRef}
+        >
           Spurt! loved by all users
         </Heading>
 
@@ -63,6 +112,7 @@ export default function Reviews() {
           fontSize={{ sm: "xs", lg: "sm" }}
           fontWeight="normal"
           lineHeight="1.5rem"
+          ref={textRef}
         >
           See how much they love our product and give positive response about
           <br />
