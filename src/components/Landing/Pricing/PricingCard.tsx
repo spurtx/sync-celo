@@ -30,7 +30,7 @@ function PricingCard({ plan }: Props) {
       ease: "sine.in",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(-10deg)",
+      y: 30,
       scrollTrigger: {
         trigger: ".card_1trigger",
       },
@@ -40,7 +40,7 @@ function PricingCard({ plan }: Props) {
       ease: "sine.in",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(10deg)",
+      y: 30,
       scrollTrigger: {
         trigger: ".card_2trigger",
       },

@@ -70,8 +70,8 @@ export default function Faq() {
 
   return (
     <Box
-      pb="90px"
-      mt="200px"
+      pb="50px"
+      mt={{ sm: "100px", lg: "200px" }}
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
