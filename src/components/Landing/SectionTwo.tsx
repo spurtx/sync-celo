@@ -98,6 +98,7 @@ export default function SectionTwo() {
       mx="auto"
       position="relative"
       mb="100px"
+      id="forMember"
     >
       <Box textAlign="center" mt="4rem">
         <Tag
@@ -195,6 +196,7 @@ export default function SectionTwo() {
           ref={rightColumnRef}
           flex="1 1 0px"
           textAlign={{ sm: "center", lg: "left" }}
+          className="rightCol"
         >
           <Box
             w={{ sm: "100%", lg: "75%" }}
@@ -213,7 +215,7 @@ export default function SectionTwo() {
             </Text>
           </Box>
 
-          <Box w={{ sm: "100%", xl: "75%" }} className="rightCol">
+          <Box w={{ sm: "100%", xl: "75%" }}>
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>

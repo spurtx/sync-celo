@@ -25,6 +25,7 @@ export default function PricingSection() {
   const textRef: any = useRef();
   const headRef: any = useRef();
   const tagRef: any = useRef();
+  const tabRef: any = useRef();
 
   useEffect(() => {
     gsap.from(textRef.current, {
@@ -50,6 +51,17 @@ export default function PricingSection() {
     });
 
     gsap.from(tagRef.current, {
+      opacity: 0,
+      y: 30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_5",
+      },
+    });
+
+    gsap.from(tabRef.current, {
       opacity: 0,
       y: 30,
       ease: "slow(0.7, 0.7, false)",
@@ -123,7 +135,7 @@ export default function PricingSection() {
 
       <Tabs colorScheme="gray">
         <RadioGroup defaultValue="monthly">
-          <TabList border="none" my="3rem" justifyContent="center">
+          <TabList border="none" my="3rem" justifyContent="center" ref={tabRef}>
             <Tab
               border="none"
               _focus={{ border: "none" }}
@@ -178,9 +190,9 @@ const plansData = [
         type: "member",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinctio ut corpoaris",
+          "distinctio ut coarpoaris",
+          "distinctio ut corpxoris",
         ],
       },
     ],
@@ -191,10 +203,10 @@ const plansData = [
         type: "partner",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinctio ut caorporis",
+          "distinactio ut corporis",
+          "distincatio ut corporis",
+          "distinctioa ut corporis",
         ],
       },
     ],
@@ -208,9 +220,9 @@ const plansData = [
         type: "member",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinctio ut coraporis",
+          "distinctio ut caorporis",
+          "distinctio ut coarporis",
         ],
       },
     ],
@@ -221,10 +233,10 @@ const plansData = [
         type: "partner",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinctiao ut corporis",
+          "distincatio ut corporis",
+          "distinctaio ut corporis",
+          "distinactio ut corporis",
         ],
       },
     ],
@@ -238,9 +250,9 @@ const plansData = [
         type: "member",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinctaio ut corporis",
+          "distincatio ut corporis",
+          "distinactio ut corporis",
         ],
       },
     ],
@@ -251,10 +263,10 @@ const plansData = [
         type: "partner",
         description: "In assumenda consequatur exercitationem a aspernatur.",
         points: [
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
-          "distinctio ut corporis",
+          "distinactio ut corporis",
+          "distinctio ut corpoaris",
+          "distinctiao ut corporis",
+          "distinctio ut coraporis",
         ],
       },
     ],

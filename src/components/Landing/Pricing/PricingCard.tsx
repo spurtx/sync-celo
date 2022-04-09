@@ -79,7 +79,12 @@ function PricingCard({ plan }: Props) {
             </Text>
           </Box>
 
-          <Text color="text.gray" fontSize="xl" fontWeight="bold">
+          <Text
+            color="text.gray"
+            fontSize="xl"
+            fontWeight="bold"
+            textTransform="capitalize"
+          >
             {item.type}
           </Text>
 
@@ -131,7 +136,7 @@ function PricingCard({ plan }: Props) {
             _hover={{ color: "white", bgColor: "brand.400" }}
             _active={{ bg: "white" }}
           >
-            Get Started <BsArrowRightShort size="1.3rem" />
+            Try for 90 Days <BsArrowRightShort size="1.3rem" />
           </Button>
         </Box>
       ))}
@@ -160,7 +165,12 @@ function PricingCard({ plan }: Props) {
             </Text>
           </Box>
 
-          <Text color="text.gray" fontSize="xl" fontWeight="bold">
+          <Text
+            color="text.gray"
+            fontSize="xl"
+            fontWeight="bold"
+            textTransform="capitalize"
+          >
             {item.type}
           </Text>
 
@@ -212,7 +222,7 @@ function PricingCard({ plan }: Props) {
             _hover={{ color: "white", bgColor: "brand.400" }}
             _active={{ bg: "brand.400" }}
           >
-            Get Started <BsArrowRightShort size="1.3rem" />
+            Try for 90 Days <BsArrowRightShort size="1.3rem" />
           </Button>
         </Box>
       ))}

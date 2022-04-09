@@ -4,7 +4,6 @@ import {
   HStack,
   VStack,
   Button,
-  Link as ChakraLink,
   Image,
   Drawer,
   DrawerBody,
@@ -12,7 +11,6 @@ import {
   DrawerContent,
   useDisclosure,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClear } from "react-icons/md";
 import gsap from "gsap";
@@ -33,30 +31,31 @@ function Navbar() {
     });
   }, []);
 
-  const scrollToPartner = () => {
-    gsap.timeline().to(window, 1, { scrollTo: "#forPartners" });
+  const scrollToSection = (arg: string) => {
+    gsap.timeline().to(window, { scrollTo: arg, duration: 1 });
+    onClose();
   };
 
   const routes = [
     {
       name: "For Partners",
-      link: "#",
+      go_to: "#forPartner",
     },
     {
       name: "For Members",
-      link: "#",
+      go_to: "#forMember",
     },
     {
       name: "Reviews",
-      link: "#",
+      go_to: "#reviews",
     },
     {
       name: "Pricing",
-      link: "#",
+      go_to: "#pricing",
     },
     {
       name: "FAQs",
-      link: "#",
+      go_to: "#faq",
     },
   ];
 
@@ -91,18 +90,20 @@ function Navbar() {
         </Button>
 
         <HStack spacing={10} display={{ sm: "none", xl: "flex" }}>
-          {routes.map(({ name, link }: any) => (
-            <Link href={link} passHref key={name}>
-              <ChakraLink
-                _focus={{ outline: "none" }}
-                _hover={{ outline: "none" }}
-                color="text.gray"
-                fontWeight="semibold"
-                fontSize="sm"
-              >
-                {name}
-              </ChakraLink>
-            </Link>
+          {routes.map(({ name, go_to }: any) => (
+            <Button
+              key={name}
+              _focus={{ outline: "none" }}
+              _hover={{ outline: "none" }}
+              color="text.gray"
+              fontWeight="semibold"
+              fontSize="sm"
+              px="0px"
+              h="0px"
+              onClick={() => scrollToSection(go_to)}
+            >
+              {name}
+            </Button>
           ))}
 
           <Button
@@ -114,8 +115,9 @@ function Navbar() {
             px="1.5rem"
             py="1.3rem"
             fontSize="sm"
-            _hover={{ bg: "none" }}
-            _active={{ bg: "none" }}
+            transition="all 0.5s"
+            _hover={{ bg: "brand.400", color: "white" }}
+            _active={{ bg: "brand.400", color: "white" }}
             _focus={{ outline: "none" }}
           >
             Join Beta
@@ -142,19 +144,21 @@ function Navbar() {
                 <MdOutlineClear fontSize="1.5rem" />
               </Button>
             </HStack>
-            <VStack spacing={10}>
-              {routes.map(({ name, link }: any) => (
-                <Link href={link} passHref key={name}>
-                  <ChakraLink
-                    _focus={{ outline: "none" }}
-                    _hover={{ outline: "none" }}
-                    color="text.gray"
-                    fontWeight="semibold"
-                    fontSize="md"
-                  >
-                    {name}
-                  </ChakraLink>
-                </Link>
+            <VStack spacing={16} mt="5rem">
+              {routes.map(({ name, go_to }: any) => (
+                <Button
+                  key={name}
+                  _focus={{ outline: "none" }}
+                  _hover={{ outline: "none" }}
+                  color="text.gray"
+                  fontWeight="semibold"
+                  fontSize="sm"
+                  px="0px"
+                  h="0px"
+                  onClick={() => scrollToSection(go_to)}
+                >
+                  {name}
+                </Button>
               ))}
 
               <Button
@@ -169,7 +173,7 @@ function Navbar() {
                 _active={{ bg: "none" }}
                 _focus={{ outline: "none" }}
               >
-                Sign up
+                Join Beta
               </Button>
             </VStack>
           </DrawerBody>

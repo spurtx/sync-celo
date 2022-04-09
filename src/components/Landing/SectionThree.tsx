@@ -58,6 +58,7 @@ export default function SectionThree() {
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
+      id="reviews"
     >
       <HStack
         justifyContent="center"
