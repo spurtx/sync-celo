@@ -89,7 +89,7 @@ function Hero() {
     <Box
       maxW={"min(100%,1500px)"}
       mx="auto"
-      mb={{ sm: "100px", xl: "400px" }}
+      mb={{ sm: "100px", xl: "300px" }}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mt="5rem"
       position="relative"
@@ -142,9 +142,9 @@ function Hero() {
               px="1.5rem"
               py="1.4rem"
               w={{ sm: "170px", xl: "200px" }}
-              _hover={{ bg: "#FF5E4B" }}
+              _hover={{ bg: "#FF5E4B", color: "brand.400" }}
               _active={{ bg: "#FF5E4B" }}
-              _focus={{ outline: "none" }}
+              _focus={{ outline: "none", color: "brand.400" }}
             >
               Get Started
               <BsArrowRightShort size="1.3rem" />
@@ -164,7 +164,7 @@ function Hero() {
               _active={{ bg: "brand.100" }}
               _focus={{ outline: "none" }}
             >
-              Watch Demo
+              How It Works
               <BsArrowRightShort size="1.3rem" />
             </Button>
           </Stack>

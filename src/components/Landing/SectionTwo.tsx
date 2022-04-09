@@ -97,7 +97,7 @@ export default function SectionTwo() {
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       position="relative"
-      mb="200px"
+      mb="100px"
     >
       <Box textAlign="center" mt="4rem">
         <Tag
@@ -111,7 +111,7 @@ export default function SectionTwo() {
           fontWeight="medium"
           ref={tagRef}
         >
-          BECOME A CONSULTANT PARTNER
+          FOR MEMBERS
         </Tag>
 
         <Heading

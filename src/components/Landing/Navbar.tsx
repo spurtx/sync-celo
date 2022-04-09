@@ -59,6 +59,7 @@ function Navbar() {
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       pt="2rem"
+      id="navbar"
     >
       <HStack ref={navRef} justifyContent="space-between">
         <Box>

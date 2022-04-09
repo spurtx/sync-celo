@@ -120,15 +120,16 @@ function PricingCard({ plan }: Props) {
             mx="auto"
             color="brand.400"
             bgColor="white"
+            fontSize="sm"
             borderColor="brand.400"
             borderWidth="2px"
             borderRadius="3xl"
             w="80%"
             d="flex"
-            fontSize="sm"
-            _hover={{ bg: "white" }}
-            _active={{ bg: "white" }}
             justifyContent="space-between"
+            transition="all 0.6s"
+            _hover={{ color: "white", bgColor: "brand.400" }}
+            _active={{ bg: "white" }}
           >
             Get Started <BsArrowRightShort size="1.3rem" />
           </Button>
@@ -198,17 +199,18 @@ function PricingCard({ plan }: Props) {
             left="0pc"
             right="0px"
             mx="auto"
-            color="white"
-            bgColor="brand.400"
+            color="brand.400"
+            fontSize="sm"
+            bgColor="white"
             borderColor="brand.400"
             borderWidth="2px"
             borderRadius="3xl"
             w="80%"
             d="flex"
-            fontSize="sm"
-            _hover={{ bg: "brand.400" }}
-            _active={{ bg: "brand.400" }}
             justifyContent="space-between"
+            transition="all 0.6s"
+            _hover={{ color: "white", bgColor: "brand.400" }}
+            _active={{ bg: "brand.400" }}
           >
             Get Started <BsArrowRightShort size="1.3rem" />
           </Button>
