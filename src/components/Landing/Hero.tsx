@@ -11,8 +11,10 @@ import {
 } from "@chakra-ui/react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { gsap } from "gsap";
+import { useRouter } from "next/router";
 
 function Hero() {
+  const router = useRouter();
   const headingRef: any = useRef();
   const textRef: any = useRef();
   const buttonRef: any = useRef();
@@ -105,7 +107,7 @@ function Hero() {
               color="text.gray"
               fontSize={{ sm: "2xl", lg: "3xl", xl: "5xl" }}
             >
-              Project and Team <br /> Management Made Simple!
+              Project and Team <br /> Management Made Simple
             </Heading>
 
             <Text
@@ -113,15 +115,18 @@ function Hero() {
               fontSize={{ sm: "sm", lg: "md" }}
               fontWeight="normal"
               lineHeight="1.4rem"
-              my="1rem"
+              my="1.2rem"
               ref={textRef}
             >
-              Collaborating on projects has never been
+              Working with teams & handling projects just got easier. With Sync,
+              you can now track milestones, collaborate on tasks, and process
+              payments all in one place, and on the go!
+              {/* Collaborating on projects has never been
               <Show above="xl">
                 <br />
               </Show>
               easier, welcome to the project workspace that puts accountability
-              first.
+              first. */}
             </Text>
           </Box>
 
@@ -172,6 +177,7 @@ function Hero() {
               _hover={{ bg: "brand.100" }}
               _active={{ bg: "brand.100" }}
               _focus={{ outline: "none" }}
+              onClick={() => router.push("/how-it-works")}
             >
               How It Works
               <BsArrowRightShort size="1.3rem" />

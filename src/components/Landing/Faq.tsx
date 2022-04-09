@@ -12,12 +12,14 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { BsArrowRightShort } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Faq() {
+  const router = useRouter();
   const textRef: any = useRef();
   const headRef: any = useRef();
   const tagRef: any = useRef();
@@ -58,7 +60,7 @@ export default function Faq() {
     });
     gsap.from(faqRef.current, {
       opacity: 0,
-      x: -30,
+      y: 30,
       ease: "circ.in",
       delay: 0.6,
       duration: 1,
@@ -75,6 +77,7 @@ export default function Faq() {
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
+      id="faq"
     >
       <Box mb="3rem" textAlign="center" mt="4rem">
         <Tag
@@ -170,10 +173,11 @@ export default function Faq() {
             fontSize="sm"
             px="1rem"
             py="1.4rem"
-            w={{ sm: "170px", xl: "200px" }}
+            w={{ sm: "200px", xl: "200px" }}
             _hover={{ bg: "brand.100" }}
             _active={{ bg: "brand.100" }}
             _focus={{ outline: "none" }}
+            onClick={() => router.push("/how-it-works")}
           >
             More On How It Works
             <BsArrowRightShort size="1.3rem" />

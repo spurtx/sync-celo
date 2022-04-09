@@ -75,6 +75,7 @@ export default function Reviews() {
 
   return (
     <Box
+      id="reviews"
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
@@ -156,7 +157,7 @@ export default function Reviews() {
           responsive={responsive}
         >
           {reviewsData.map((review: any) => (
-            <div key={review.name}>
+            <div key={review.id}>
               <ReviewCard review={review} />
             </div>
           ))}
@@ -168,6 +169,7 @@ export default function Reviews() {
 
 const reviewsData = [
   {
+    id: 1,
     image: "/images/avatar.png",
     name: "Hemchandra Chakravorty",
     location: "Copenhagen, Denmark",
@@ -175,12 +177,14 @@ const reviewsData = [
       "I know in real-time where the money is spent, and I don’t have to use company’s credit card anymore. What a relief!",
   },
   {
+    id: 2,
     image: "/images/avatar.png",
     name: "Nonkosi Joyi",
     location: "Hangzhou, China",
     review: "“Exercitationem et autem. Sunt rerum voluptatem et soluta.”",
   },
   {
+    id: 3,
     image: "/images/avatar.png",
     name: "Amarachi Nkechi",
     location: "Cardiff, North Ireland",
@@ -188,6 +192,7 @@ const reviewsData = [
       "I know in real-time where the money is spent, and I don’t have to use company’s credit card anymore. What a relief!",
   },
   {
+    id: 4,
     image: "/images/avatar.png",
     name: "Hemchandra Chakravorty",
     location: "Copenhagen, Denmark",

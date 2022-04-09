@@ -73,7 +73,7 @@ function SectionOne() {
       mb="100px"
       mt="1rem"
       mx="auto"
-      id="forPartners"
+      id="forPartner"
     >
       <Box textAlign="center">
         <Tag
@@ -96,7 +96,7 @@ function SectionOne() {
           className="trigger"
           ref={headRef}
         >
-          Create Projects, Gigs & Bids
+          Create and Manage Gigs or Bids
         </Heading>
 
         <Text
@@ -106,12 +106,7 @@ function SectionOne() {
           fontWeight="normal"
           lineHeight={{ sm: "1.2rem", lg: "0.8rem" }}
         >
-          Setup the tools that enable you work efficiently. You can pick from
-          the existing
-          <Box display={{ sm: "none", lg: "block" }}>
-            <br />
-          </Box>
-          integrations we have connect at least one to proceed.
+          Setup tools to enable you work more efficiently.
         </Text>
       </Box>
 
@@ -155,20 +150,6 @@ function SectionOne() {
               >
                 {item.text}
               </Text>
-
-              <Link href={item.link} passHref>
-                <ChakraLink
-                  _focus={{ outline: "none" }}
-                  _hover={{ outline: "none" }}
-                  color="brand.400"
-                  fontWeight="bold"
-                  fontSize="md"
-                  d="inline-flex"
-                  alignItems="center"
-                >
-                  Learn more <BsArrowRightShort size="1.5rem" />
-                </ChakraLink>
-              </Link>
             </Box>
           ))}
         </SimpleGrid>
@@ -182,26 +163,24 @@ export default SectionOne;
 const data = [
   {
     image: "/images/pie.png",
-    title: "Analyze performance",
-    text: "Track progress on projects, gigs or bids and ensure productivity.",
-    link: "#",
+    title: "Easy & Intuitive",
+    text: "Seamlessly plan, design and execute projects on a smart and adaptable platform built for efficiency.",
   },
   {
     image: "/images/shield.png",
-    title: "Collaborate securely",
-    text: "Share/publish documents with your team members.",
-    link: "#",
+    title: "Global Marketplace",
+    text: "Gain access to verified and employable global talents in every professional field",
   },
   {
     image: "/images/dot_pattern.png",
-    title: "Global marketplace",
-    text: "Gain access to global talents in every professional field.",
+    title: "Secure & Better Collaboration ",
+    text: "Share and collaborate on project details, documents and messages on an end-to-end encrypted channel",
     link: "#",
   },
   {
     image: "/images/workflow.png",
-    title: "Easy and Intuitive",
-    text: "Easily converse and collaborate with team members. ",
+    title: "Performance Analysis",
+    text: "Get real-time insights of project and team members performance to track productivity.",
     link: "#",
   },
 ];

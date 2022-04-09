@@ -13,8 +13,20 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BsTwitter, BsInstagram, BsLinkedin, BsGoogle } from "react-icons/bs";
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 function LandingFooter() {
+  const scrollToSection = (arg: string) => {
+    gsap.timeline().to(window, {
+      scrollTo: arg,
+      duration: 0.5,
+      ease: "power4.in",
+    });
+  };
+
   return (
     <Box
       bgColor="brand.400"
@@ -93,16 +105,27 @@ function LandingFooter() {
                 spacing={6}
                 textTransform="capitalize"
               >
+                <ListItem>
+                  <Link href="/signup" passHref>
+                    <ChakraLink _focus={{ outline: "none" }} isExternal>
+                      Join Beta
+                    </ChakraLink>
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link href="/developer" passHref>
+                    <ChakraLink _focus={{ outline: "none" }}>
+                      Developer
+                    </ChakraLink>
+                  </Link>
+                </ListItem>
                 {productRoutes.map((item: any) => (
-                  <ListItem key={item.title}>
-                    <Link href={item.link} passHref>
-                      <ChakraLink
-                        _focus={{ outline: "none" }}
-                        isExternal={item.newTab}
-                      >
-                        {item.title}
-                      </ChakraLink>
-                    </Link>
+                  <ListItem
+                    cursor="pointer"
+                    key={item.title}
+                    onClick={() => scrollToSection(item.link)}
+                  >
+                    {item.title}
                   </ListItem>
                 ))}
               </UnorderedList>
@@ -151,17 +174,8 @@ export default LandingFooter;
 
 const productRoutes = [
   {
-    title: "Join beta",
-    link: "https://sync-staging.netlify.app/signup",
-    newTab: true,
-  },
-  {
     title: "features",
-    link: "#forPartners",
-  },
-  {
-    title: "developer",
-    link: "/",
+    link: "#forPartner",
   },
   {
     title: "pricing",
