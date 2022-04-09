@@ -11,6 +11,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { BsArrowRightShort } from "react-icons/bs";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -153,13 +155,21 @@ export default function Faq() {
 
                     <Button
                       mt="2rem"
-                      bgColor="brand.400"
-                      color="white"
+                      bgColor="brand.100"
+                      color="brand.400"
+                      borderColor="brand.400"
+                      borderWidth="1px"
+                      fontWeight="normal"
                       fontSize="sm"
-                      _hover={{ bgColor: "brand.400" }}
-                      _active={{ bgColor: "brand.400" }}
+                      px="1rem"
+                      py="1.4rem"
+                      w={{ sm: "170px", xl: "200px" }}
+                      _hover={{ bg: "brand.100" }}
+                      _active={{ bg: "brand.100" }}
+                      _focus={{ outline: "none" }}
                     >
-                      Learn More
+                      More On How It Works
+                      <BsArrowRightShort size="1.3rem" />
                     </Button>
                   </AccordionPanel>
                 </>

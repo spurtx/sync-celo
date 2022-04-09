@@ -69,6 +69,7 @@ export default function PricingSection() {
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
       position="relative"
+      id="pricing"
     >
       <Box textAlign="center" mt="4rem">
         <Tag

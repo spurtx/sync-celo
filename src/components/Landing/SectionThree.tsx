@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import {
   Box,
-  Center,
+  Button,
   Text,
   Tag,
   Heading,
   Image,
   HStack,
 } from "@chakra-ui/react";
+import { BsArrowRightShort } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -18,6 +19,7 @@ export default function SectionThree() {
   const tagRef: any = useRef();
   const rightSideRef: any = useRef();
   const leftSideRef: any = useRef();
+  const buttonRef: any = useRef();
 
   useEffect(() => {
     gsap.from(textRef.current, {
@@ -74,6 +76,17 @@ export default function SectionThree() {
         trigger: ".trigger_3",
       },
     });
+
+    gsap.from(buttonRef.current, {
+      opacity: 0,
+      x: -30,
+      ease: "slow(0.7, 0.7, false)",
+      delay: 0.6,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger_3",
+      },
+    });
   });
 
   return (
@@ -95,13 +108,12 @@ export default function SectionThree() {
               transform={{ sm: "rotate(90deg)", lg: "rotate(0deg)" }}
               src="/images/left-side.svg"
               height={{ sm: "330px", lg: "600px" }}
-              // width={{ sm: "220px", lg: "300px" }}
               alt="iphone"
             />
           </Box>
         </Box>
         <Box>
-          <Box textAlign="center" maxW="400px" h="300px">
+          <Box textAlign="center" maxW="400px" mb={{ sm: "50px", lg: "0px" }}>
             <Tag
               color="brand.400"
               size="lg"
@@ -136,6 +148,25 @@ export default function SectionThree() {
               Sync! absolutely works great with payment tools in ensuring your
               payments.
             </Text>
+
+            <Button
+              ref={buttonRef}
+              mt="1.4rem"
+              bgColor="#FF5E4B"
+              color="white"
+              borderColor="#ff5e4b"
+              borderWidth="2px"
+              fontWeight="normal"
+              fontSize="sm"
+              px="1rem"
+              py="1.3rem"
+              w={{ sm: "170px", xl: "170px" }}
+              _active={{ bg: "#FF5E4B" }}
+              _focus={{ outline: "none", color: "brand.400" }}
+            >
+              Get Started
+              <BsArrowRightShort size="1.3rem" />
+            </Button>
           </Box>
         </Box>
         <Box display={{ sm: "none", lg: "block" }}>
@@ -144,7 +175,6 @@ export default function SectionThree() {
               src="/images/right-side.svg"
               transform={{ sm: "rotate(90deg)", lg: "rotate(0deg)" }}
               height={{ sm: "330px", lg: "600px" }}
-              // width={{ sm: "220px", lg: "400px" }}
               alt="iphone"
             />
           </Box>

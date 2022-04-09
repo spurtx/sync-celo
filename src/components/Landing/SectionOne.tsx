@@ -70,9 +70,10 @@ function SectionOne() {
     <Box
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
-      mb="130px"
-      mt="3rem"
+      mb="100px"
+      mt="1rem"
       mx="auto"
+      id="forPartners"
     >
       <Box textAlign="center">
         <Tag
@@ -85,7 +86,7 @@ function SectionOne() {
           fontWeight="medium"
           ref={tagRef}
         >
-          BECOME A CONSULTANT PARTNER
+          FOR PARTNERS
         </Tag>
 
         <Heading
@@ -123,7 +124,7 @@ function SectionOne() {
         >
           {data.map((item) => (
             <Box key={item.title} textAlign="center" px="1rem">
-              <Tag borderRadius="8px" h="40px" w="50px" p="8px" bg="#ebf5f0">
+              <Tag borderRadius="8px" h="35px" w="35px" p="7px" bg="#ebf5f0">
                 <Box
                   border="1px dashed gray"
                   h="100%"

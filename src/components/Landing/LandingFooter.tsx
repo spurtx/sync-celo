@@ -9,6 +9,7 @@ import {
   IconButton,
   UnorderedList,
   ListItem,
+  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BsTwitter, BsInstagram, BsLinkedin, BsGoogle } from "react-icons/bs";
@@ -26,17 +27,19 @@ function LandingFooter() {
     >
       <Box mt={{ sm: "3rem", xl: "6rem" }}>
         <Stack
-          direction={{ sm: "column", xl: "row" }}
-          spacing={20}
-          alignItems="start"
+          direction={{ sm: "column", lg: "row" }}
+          spacing={{ sm: 20, lg: 32 }}
+          alignItems={{ sm: "center", lg: "start" }}
+          justifyContent="center"
         >
-          <Box w={{ sm: "100%", lg: "30%" }}>
-            <Stack
-              direction="column"
-              alignItems={{ sm: "flex-start", md: "center", lg: "flex-end" }}
-            >
+          <Box>
+            <VStack>
               <Box mb="3rem">
-                <Image src="/images/footer_logo.png" alt="sync logo" />
+                <Link href="/" passHref>
+                  <ChakraLink _focus={{ outline: "none" }}>
+                    <Image src="/images/footer_logo.png" alt="sync logo" />
+                  </ChakraLink>
+                </Link>
               </Box>
 
               <Box color="white">
@@ -71,117 +74,66 @@ function LandingFooter() {
                   icon={<BsLinkedin />}
                 />
               </Box>
-            </Stack>
+            </VStack>
           </Box>
 
-          <Stack
-            direction={{ sm: "column", lg: "row" }}
-            spacing={20}
-            flexGrow={1}
-          >
-            <Stack direction="row" spacing={20}>
-              <Box color="white">
-                <Heading fontSize="md" fontWeight="medium">
-                  Product
-                </Heading>
+          <Stack direction="row" spacing={{ sm: 20, lg: 32 }}>
+            <Box color="white">
+              <Heading fontSize="md" fontWeight="medium">
+                Product
+              </Heading>
 
-                <UnorderedList
-                  listStyleType="none"
-                  m="0px"
-                  fontSize="sm"
-                  fontWeight={400}
-                  opacity="0.9"
-                  mt="2rem"
-                  spacing={6}
-                  textTransform="capitalize"
-                >
-                  {productRoutes.map((item: any) => (
-                    <ListItem key={item.title}>
-                      <Link href={item.link} passHref>
-                        <ChakraLink>{item.title}</ChakraLink>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </Box>
+              <UnorderedList
+                listStyleType="none"
+                m="0px"
+                fontSize="sm"
+                fontWeight={400}
+                opacity="0.9"
+                mt="2rem"
+                spacing={6}
+                textTransform="capitalize"
+              >
+                {productRoutes.map((item: any) => (
+                  <ListItem key={item.title}>
+                    <Link href={item.link} passHref>
+                      <ChakraLink
+                        _focus={{ outline: "none" }}
+                        isExternal={item.newTab}
+                      >
+                        {item.title}
+                      </ChakraLink>
+                    </Link>
+                  </ListItem>
+                ))}
+              </UnorderedList>
+            </Box>
 
-              <Box color="white">
-                <Heading fontSize="md" fontWeight="medium">
-                  Services
-                </Heading>
+            <Box color="white">
+              <Heading fontSize="md" fontWeight="medium">
+                Company
+              </Heading>
 
-                <UnorderedList
-                  listStyleType="none"
-                  m="0px"
-                  fontSize="sm"
-                  mt="2rem"
-                  spacing={6}
-                  fontWeight={400}
-                  opacity="0.9"
-                  textTransform="capitalize"
-                >
-                  {servicesRoutes.map((item: any) => (
-                    <ListItem key={item.title}>
-                      <Link href={item.link} passHref>
-                        <ChakraLink>{item.title}</ChakraLink>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </Box>
-            </Stack>
-
-            <Stack direction="row" spacing={20}>
-              <Box color="white">
-                <Heading fontSize="md" fontWeight="medium">
-                  Company
-                </Heading>
-
-                <UnorderedList
-                  listStyleType="none"
-                  m="0px"
-                  fontSize="sm"
-                  mt="2rem"
-                  spacing={6}
-                  fontWeight={400}
-                  opacity="0.9"
-                  textTransform="capitalize"
-                >
-                  {companyRoutes.map((item: any) => (
-                    <ListItem key={item.title}>
-                      <Link href={item.link} passHref>
-                        <ChakraLink>{item.title}</ChakraLink>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </Box>
-
-              <Box color="white">
-                <Heading fontSize="md" fontWeight="medium">
-                  More
-                </Heading>
-
-                <UnorderedList
-                  listStyleType="none"
-                  m="0px"
-                  fontSize="sm"
-                  mt="2rem"
-                  spacing={6}
-                  fontWeight={400}
-                  opacity="0.9"
-                  textTransform="capitalize"
-                >
-                  {moreRoutes.map((item: any) => (
-                    <ListItem key={item.title}>
-                      <Link href={item.link} passHref>
-                        <ChakraLink>{item.title}</ChakraLink>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </Box>
-            </Stack>
+              <UnorderedList
+                listStyleType="none"
+                m="0px"
+                fontSize="sm"
+                mt="2rem"
+                spacing={6}
+                fontWeight={400}
+                opacity="0.9"
+                textTransform="capitalize"
+              >
+                {companyRoutes.map((item: any) => (
+                  <ListItem key={item.title}>
+                    <Link href={item.link} passHref>
+                      <ChakraLink _focus={{ outline: "none" }} isExternal>
+                        {item.title}
+                      </ChakraLink>
+                    </Link>
+                  </ListItem>
+                ))}
+              </UnorderedList>
+            </Box>
           </Stack>
         </Stack>
       </Box>
@@ -199,80 +151,39 @@ export default LandingFooter;
 
 const productRoutes = [
   {
-    title: "landing page",
-    link: "/",
+    title: "Join beta",
+    link: "https://sync-staging.netlify.app/signup",
+    newTab: true,
   },
   {
     title: "features",
-    link: "/",
+    link: "#forPartners",
   },
   {
-    title: "documentation",
-    link: "/",
-  },
-  {
-    title: "referral program",
+    title: "developer",
     link: "/",
   },
   {
     title: "pricing",
-    link: "/",
-  },
-];
-
-const servicesRoutes = [
-  {
-    title: "Documentation",
-    link: "/",
-  },
-  {
-    title: "design",
-    link: "/",
-  },
-  {
-    title: "themes",
-    link: "/",
-  },
-  {
-    title: "illustrations",
-    link: "/",
-  },
-  {
-    title: "UI Kit",
-    link: "/",
+    link: "#pricing",
   },
 ];
 
 const companyRoutes = [
   {
     title: "about",
-    link: "/",
+    link: "https://www.spurt.solutions/",
   },
   {
-    title: "terms",
-    link: "/",
+    title: "Cookie Policy",
+    link: "https://www.freeprivacypolicy.com/live/45180457-d16f-4c39-80e8-3e3417a3d557",
   },
   {
     title: "privacy policy",
-    link: "/",
+    link: "https://www.freeprivacypolicy.com/live/45180457-d16f-4c39-80e8-3e3417a3d557",
   },
   {
     title: "careers",
-    link: "/",
-  },
-];
-
-const moreRoutes = [
-  {
-    title: "documentation",
-    link: "/",
-  },
-  {
-    title: "license",
-    link: "/",
-  },
-  {
-    title: "changelog",
     link: "/",
   },
 ];
