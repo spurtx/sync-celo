@@ -64,7 +64,7 @@ export default function PricingSection() {
   return (
     <Box
       pb="90px"
-      pt="100px"
+      pt="0px"
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
