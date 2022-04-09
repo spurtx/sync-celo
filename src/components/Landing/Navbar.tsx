@@ -15,7 +15,10 @@ import {
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClear } from "react-icons/md";
-import { gsap } from "gsap";
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 function Navbar() {
   const navRef: any = useRef();
@@ -30,25 +33,29 @@ function Navbar() {
     });
   }, []);
 
+  const scrollToPartner = () => {
+    gsap.timeline().to(window, 1, { scrollTo: "#forPartners" });
+  };
+
   const routes = [
     {
-      name: "Home",
+      name: "For Partners",
       link: "#",
     },
     {
-      name: "Landings",
+      name: "For Members",
       link: "#",
     },
     {
-      name: "Pages",
+      name: "Reviews",
       link: "#",
     },
     {
-      name: "Docs",
+      name: "Pricing",
       link: "#",
     },
     {
-      name: "Help",
+      name: "FAQs",
       link: "#",
     },
   ];
@@ -91,7 +98,7 @@ function Navbar() {
                 _hover={{ outline: "none" }}
                 color="text.gray"
                 fontWeight="semibold"
-                fontSize="md"
+                fontSize="sm"
               >
                 {name}
               </ChakraLink>
@@ -104,13 +111,14 @@ function Navbar() {
             borderColor="brand.400"
             borderWidth="2px"
             borderStyle="solid"
-            px="1.7rem"
+            px="1.5rem"
             py="1.3rem"
+            fontSize="sm"
             _hover={{ bg: "none" }}
             _active={{ bg: "none" }}
             _focus={{ outline: "none" }}
           >
-            Sign up
+            Join Beta
           </Button>
         </HStack>
       </HStack>

@@ -60,7 +60,7 @@ export default function SectionTwo() {
       ease: "slow(0.7, 0.7, false)",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(-5deg)",
+      x: -32,
       scrollTrigger: {
         trigger: ".leftCol",
       },
@@ -71,7 +71,7 @@ export default function SectionTwo() {
       ease: "slow(0.7, 0.7, false)",
       delay: 0.6,
       duration: 1,
-      transform: "rotate(5deg)",
+      x: 20,
       scrollTrigger: {
         trigger: ".rightCol",
       },
@@ -151,19 +151,6 @@ export default function SectionTwo() {
           flexDir="column"
           alignItems={{ sm: "flex-start", lg: "flex-end" }}
         >
-          {/* <Box w={{ sm: "100%", xl: "75%" }} mb="4rem">
-            <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
-              <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
-            </Tag>
-            <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Easy Access
-            </Text>
-            <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
-            </Text>
-          </Box> */}
-
           <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" className="leftCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
@@ -225,19 +212,6 @@ export default function SectionTwo() {
               placerat elementum massa turpis at.
             </Text>
           </Box>
-
-          {/* <Box w={{ sm: "100%", xl: "75%" }} mb="4rem" >
-            <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">
-              <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
-            </Tag>
-            <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Measure your productivity
-            </Text>
-            <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
-            </Text>
-          </Box> */}
 
           <Box w={{ sm: "100%", xl: "75%" }} className="rightCol">
             <Tag bg="#fcfcfd49" borderRadius="50%" h="15px" w="15px">

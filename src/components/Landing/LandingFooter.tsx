@@ -184,6 +184,6 @@ const companyRoutes = [
   },
   {
     title: "careers",
-    link: "/",
+    link: "https://numerous-base-628.notion.site/Careers-at-Spurt-4240eda89171497bb3d38f1136eb9c02",
   },
 ];

@@ -14,41 +14,16 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SectionThree() {
-  const textRef: any = useRef();
-  const headRef: any = useRef();
-  const tagRef: any = useRef();
+  const middleRef: any = useRef();
   const rightSideRef: any = useRef();
   const leftSideRef: any = useRef();
   const buttonRef: any = useRef();
 
   useEffect(() => {
-    gsap.from(textRef.current, {
+    gsap.from(middleRef.current, {
       opacity: 0,
-      y: 30,
       ease: "slow(0.7, 0.7, false)",
       delay: 0.8,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".trigger_3",
-      },
-    });
-
-    gsap.from(headRef.current, {
-      opacity: 0,
-      y: 30,
-      ease: "slow(0.7, 0.7, false)",
-      delay: 0.7,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".trigger_3",
-      },
-    });
-
-    gsap.from(tagRef.current, {
-      opacity: 0,
-      y: 30,
-      ease: "slow(0.7, 0.7, false)",
-      delay: 0.6,
       duration: 1,
       scrollTrigger: {
         trigger: ".trigger_3",
@@ -76,17 +51,6 @@ export default function SectionThree() {
         trigger: ".trigger_3",
       },
     });
-
-    gsap.from(buttonRef.current, {
-      opacity: 0,
-      x: -30,
-      ease: "slow(0.7, 0.7, false)",
-      delay: 0.6,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".trigger_3",
-      },
-    });
   });
 
   return (
@@ -94,7 +58,6 @@ export default function SectionThree() {
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
-      // h="60vh"
     >
       <HStack
         justifyContent="center"
@@ -113,7 +76,12 @@ export default function SectionThree() {
           </Box>
         </Box>
         <Box>
-          <Box textAlign="center" maxW="400px" mb={{ sm: "50px", lg: "0px" }}>
+          <Box
+            ref={middleRef}
+            textAlign="center"
+            maxW="400px"
+            mb={{ sm: "50px", lg: "0px" }}
+          >
             <Tag
               color="brand.400"
               size="lg"
@@ -123,9 +91,8 @@ export default function SectionThree() {
               px="20px"
               bgColor="brand.100"
               fontWeight="medium"
-              ref={tagRef}
             >
-              Integrations
+              INTEGRATIONS
             </Tag>
 
             <Heading
@@ -133,7 +100,6 @@ export default function SectionThree() {
               fontSize={{ sm: "xl", lg: "3xl" }}
               my="1.2rem"
               className="trigger_3"
-              ref={headRef}
             >
               Seamless integrations with other payment tools
             </Heading>
@@ -143,7 +109,6 @@ export default function SectionThree() {
               fontSize="sm"
               fontWeight="normal"
               lineHeight="1.5rem"
-              ref={textRef}
             >
               Sync! absolutely works great with payment tools in ensuring your
               payments.
@@ -160,9 +125,19 @@ export default function SectionThree() {
               fontSize="sm"
               px="1rem"
               py="1.3rem"
+              transition="all 0.4s"
               w={{ sm: "170px", xl: "170px" }}
-              _active={{ bg: "#FF5E4B" }}
-              _focus={{ outline: "none", color: "brand.400" }}
+              _hover={{
+                bg: "brand.400",
+                color: "white",
+                borderColor: "brand.400",
+              }}
+              _active={{
+                bg: "brand.400",
+                color: "white",
+                borderColor: "brand.400",
+              }}
+              _focus={{ outline: "none" }}
             >
               Get Started
               <BsArrowRightShort size="1.3rem" />

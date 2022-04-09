@@ -152,31 +152,33 @@ export default function Faq() {
                     >
                       {faq.answer}
                     </Text>
-
-                    <Button
-                      mt="2rem"
-                      bgColor="brand.100"
-                      color="brand.400"
-                      borderColor="brand.400"
-                      borderWidth="1px"
-                      fontWeight="normal"
-                      fontSize="sm"
-                      px="1rem"
-                      py="1.4rem"
-                      w={{ sm: "170px", xl: "200px" }}
-                      _hover={{ bg: "brand.100" }}
-                      _active={{ bg: "brand.100" }}
-                      _focus={{ outline: "none" }}
-                    >
-                      More On How It Works
-                      <BsArrowRightShort size="1.3rem" />
-                    </Button>
                   </AccordionPanel>
                 </>
               )}
             </AccordionItem>
           ))}
         </Accordion>
+
+        <Box d="flex" justifyContent="center">
+          <Button
+            mt="2rem"
+            bgColor="brand.100"
+            color="brand.400"
+            borderColor="brand.400"
+            borderWidth="1px"
+            fontWeight="normal"
+            fontSize="sm"
+            px="1rem"
+            py="1.4rem"
+            w={{ sm: "170px", xl: "200px" }}
+            _hover={{ bg: "brand.100" }}
+            _active={{ bg: "brand.100" }}
+            _focus={{ outline: "none" }}
+          >
+            More On How It Works
+            <BsArrowRightShort size="1.3rem" />
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
