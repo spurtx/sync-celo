@@ -79,7 +79,12 @@ function PricingCard({ plan }: Props) {
             </Text>
           </Box>
 
-          <Text color="text.gray" fontSize="xl" fontWeight="bold">
+          <Text
+            color="text.gray"
+            fontSize="xl"
+            fontWeight="bold"
+            textTransform="capitalize"
+          >
             {item.type}
           </Text>
 
@@ -160,7 +165,12 @@ function PricingCard({ plan }: Props) {
             </Text>
           </Box>
 
-          <Text color="text.gray" fontSize="xl" fontWeight="bold">
+          <Text
+            color="text.gray"
+            fontSize="xl"
+            fontWeight="bold"
+            textTransform="capitalize"
+          >
             {item.type}
           </Text>
 

@@ -4,7 +4,6 @@ import {
   HStack,
   VStack,
   Button,
-  Link as ChakraLink,
   Image,
   Drawer,
   DrawerBody,
@@ -12,7 +11,6 @@ import {
   DrawerContent,
   useDisclosure,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClear } from "react-icons/md";
 import gsap from "gsap";
@@ -34,7 +32,8 @@ function Navbar() {
   }, []);
 
   const scrollToSection = (arg: string) => {
-    gsap.timeline().to(window, { scrollTo: arg, duration: 0.5 });
+    gsap.timeline().to(window, { scrollTo: arg, duration: 1 });
+    onClose();
   };
 
   const routes = [
@@ -145,19 +144,21 @@ function Navbar() {
                 <MdOutlineClear fontSize="1.5rem" />
               </Button>
             </HStack>
-            <VStack spacing={10}>
-              {routes.map(({ name, link }: any) => (
-                <Link href={link} passHref key={name}>
-                  <ChakraLink
-                    _focus={{ outline: "none" }}
-                    _hover={{ outline: "none" }}
-                    color="text.gray"
-                    fontWeight="semibold"
-                    fontSize="md"
-                  >
-                    {name}
-                  </ChakraLink>
-                </Link>
+            <VStack spacing={16} mt="5rem">
+              {routes.map(({ name, go_to }: any) => (
+                <Button
+                  key={name}
+                  _focus={{ outline: "none" }}
+                  _hover={{ outline: "none" }}
+                  color="text.gray"
+                  fontWeight="semibold"
+                  fontSize="sm"
+                  px="0px"
+                  h="0px"
+                  onClick={() => scrollToSection(go_to)}
+                >
+                  {name}
+                </Button>
               ))}
 
               <Button

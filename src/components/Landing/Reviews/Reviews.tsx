@@ -136,7 +136,7 @@ export default function Reviews() {
         responsive={responsive}
       >
         {reviewsData.map((review: any) => (
-          <Box key={review.name}>
+          <Box key={review.id}>
             <ReviewCard review={review} />
           </Box>
         ))}
