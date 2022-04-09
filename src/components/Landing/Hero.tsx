@@ -89,7 +89,7 @@ function Hero() {
     <Box
       maxW={"min(100%,1500px)"}
       mx="auto"
-      mb={{ sm: "100px", xl: "300px" }}
+      mb={{ sm: "100px", lg: "300px" }}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mt="5rem"
       position="relative"
@@ -141,10 +141,19 @@ function Hero() {
               fontSize="sm"
               px="1.5rem"
               py="1.4rem"
+              transition="all 0.4s"
               w={{ sm: "170px", xl: "200px" }}
-              _hover={{ bg: "#FF5E4B", color: "brand.400" }}
-              _active={{ bg: "#FF5E4B" }}
-              _focus={{ outline: "none", color: "brand.400" }}
+              _hover={{
+                bg: "brand.400",
+                color: "white",
+                borderColor: "brand.400",
+              }}
+              _active={{
+                bg: "brand.400",
+                color: "white",
+                borderColor: "brand.400",
+              }}
+              _focus={{ outline: "none" }}
             >
               Get Started
               <BsArrowRightShort size="1.3rem" />
@@ -177,7 +186,7 @@ function Hero() {
             top="0px"
             zIndex="-2"
             w={{ lg: "300px", xl: "500px" }}
-            h={{ lg: "300", xl: "450px" }}
+            h={{ lg: "300", xl: "450px", "2xl": "400px" }}
             fontSize={{ sm: "2xl", lg: "3xl", xl: "5xl" }}
           >
             <Image
@@ -192,9 +201,9 @@ function Hero() {
             <Box
               ref={macbookRef}
               position="absolute"
-              bottom={{ lg: "-90px", xl: "-140px" }}
+              bottom={{ lg: "-90px", xl: "-140px", "2xl": "-100px" }}
               right={{ lg: "0px", xl: "-20px" }}
-              h={{ lg: "220", xl: "330px" }}
+              h={{ lg: "220", xl: "330px", "2xl": "300px" }}
             >
               <Image src="/images/macbook.png" alt="sync logo" height="100%" />
             </Box>
@@ -216,8 +225,8 @@ function Hero() {
             <Box
               ref={progressRef}
               position="absolute"
-              bottom="-60px"
-              right={{ lg: "240px", xl: "340px" }}
+              bottom={{ sm: "-60px", "2xl": "-100px" }}
+              right={{ lg: "240px", xl: "340px", "2xl": "300px" }}
               h={{ lg: "130px", xl: "200px" }}
             >
               <Image
@@ -229,8 +238,8 @@ function Hero() {
             <Box
               ref={patternRef}
               position="absolute"
-              bottom={{ sm: "60px", xl: "90px" }}
-              right={{ sm: "280px", xl: "400px" }}
+              bottom={{ sm: "60px", xl: "90px", "2xl": "70px" }}
+              right={{ sm: "280px", xl: "400px", "2xl": "370px" }}
               zIndex="-1"
               h={{ lg: "70px", xl: "100px" }}
             >
