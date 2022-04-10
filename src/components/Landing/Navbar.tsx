@@ -46,10 +46,6 @@ function Navbar() {
       go_to: "#forMember",
     },
     {
-      name: "Reviews",
-      go_to: "#reviews",
-    },
-    {
       name: "Pricing",
       go_to: "#pricing",
     },

@@ -13,6 +13,8 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Hide,
+  Show,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -76,7 +78,7 @@ export default function PricingSection() {
   return (
     <Box
       pb="90px"
-      pt="0px"
+      pt="50px"
       maxW={"min(100%,1500px)"}
       px={{ sm: "30px", lg: "40px", xl: "80px" }}
       mx="auto"
@@ -104,8 +106,10 @@ export default function PricingSection() {
           my="1.2rem"
           ref={headRef}
           className="trigger_5"
+          mx="auto"
+          w={{ sm: "100%", lg: "50%" }}
         >
-          Choose the plan <br /> that’s right for you
+          Flexible and cost-savings plans you can choose from
         </Heading>
 
         <Text
@@ -113,21 +117,20 @@ export default function PricingSection() {
           fontSize="sm"
           fontWeight="normal"
           lineHeight="1.5rem"
-          display="inline-block"
+          mx="auto"
+          w={{ sm: "100%", lg: "50%" }}
           ref={textRef}
         >
-          <Text color="text.dark" fontWeight="semibold" display="inline-block">
-            {" "}
-            Start with the Free plan
-          </Text>{" "}
-          to try out our platform for an unlimited period of time.{" "}
+          Get in on private beta, you don’t start paying until after 90 days.
+          Select a suitable plan now to{" "}
           <Link href="#" passHref>
             <ChakraLink
               color="brand.400"
               fontWeight="semibold"
-              display="inline-flex"
+              d="inline-flex"
+              alignItems="center"
             >
-              Get started <BsArrowRightShort size="1.2rem" />
+              get started for free <BsArrowRightShort size="1.2rem" />
             </ChakraLink>
           </Link>
         </Text>
@@ -188,11 +191,13 @@ const plansData = [
         price: 7,
         plan: "month",
         type: "member",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description: "Affordable subscription to help you get more value.",
         points: [
-          "distinctio ut corpoaris",
-          "distinctio ut coarpoaris",
-          "distinctio ut corpxoris",
+          "Unlimited Access to Gigs",
+          "Opportunity Recommendations",
+          "Performance Monitor",
+          "Data saving mode",
+          "Supports add-ons and plugins",
         ],
       },
     ],
@@ -201,12 +206,15 @@ const plansData = [
         price: 10,
         plan: "month",
         type: "partner",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description:
+          "Single subscription, multiple benefits with access to more add-ons and support systems..",
         points: [
-          "distinctio ut caorporis",
-          "distinactio ut corporis",
-          "distincatio ut corporis",
-          "distinctioa ut corporis",
+          "Project Management",
+          "Members Verification",
+          "Team Management",
+          "Budgeting and Funds Management",
+          "Access to business financing",
+          "Analytics and Reporting",
         ],
       },
     ],
@@ -218,11 +226,13 @@ const plansData = [
         price: 54,
         plan: "annually",
         type: "member",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description: "Affordable subscription to help you get more value.",
         points: [
-          "distinctio ut coraporis",
-          "distinctio ut caorporis",
-          "distinctio ut coarporis",
+          "Unlimited Access to Gigs",
+          "Opportunity Recommendations",
+          "Performance Monitor",
+          "Data saving mode",
+          "Supports add-ons and plugins",
         ],
       },
     ],
@@ -231,12 +241,15 @@ const plansData = [
         price: 90,
         plan: "annually",
         type: "partner",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description:
+          "Single subscription, multiple benefits with access to more add-ons and support systems..",
         points: [
-          "distinctiao ut corporis",
-          "distincatio ut corporis",
-          "distinctaio ut corporis",
-          "distinactio ut corporis",
+          "Project Management",
+          "Members Verification",
+          "Team Management",
+          "Budgeting and Funds Management",
+          "Access to business financing",
+          "Analytics and Reporting",
         ],
       },
     ],
@@ -248,11 +261,13 @@ const plansData = [
         price: 15,
         plan: "quarterly",
         type: "member",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description: "Affordable subscription to help you get more value.",
         points: [
-          "distinctaio ut corporis",
-          "distincatio ut corporis",
-          "distinactio ut corporis",
+          "Unlimited Access to Gigs",
+          "Opportunity Recommendations",
+          "Performance Monitor",
+          "Data saving mode",
+          "Supports add-ons and plugins",
         ],
       },
     ],
@@ -261,12 +276,15 @@ const plansData = [
         price: 25,
         plan: "quarterly",
         type: "partner",
-        description: "In assumenda consequatur exercitationem a aspernatur.",
+        description:
+          "Single subscription, multiple benefits with access to more add-ons and support systems..",
         points: [
-          "distinactio ut corporis",
-          "distinctio ut corpoaris",
-          "distinctiao ut corporis",
-          "distinctio ut coraporis",
+          "Project Management",
+          "Members Verification",
+          "Team Management",
+          "Budgeting and Funds Management",
+          "Access to business financing",
+          "Analytics and Reporting",
         ],
       },
     ],

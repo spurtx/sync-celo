@@ -169,12 +169,12 @@ const data = [
   {
     image: "/images/shield.png",
     title: "Global Marketplace",
-    text: "Gain access to verified and employable global talents in every professional field",
+    text: "Gain access to verified and employable global talents in every professional field.",
   },
   {
     image: "/images/dot_pattern.png",
     title: "Secure & Better Collaboration ",
-    text: "Share and collaborate on project details, documents and messages on an end-to-end encrypted channel",
+    text: "Share and collaborate on project details, documents and messages on an end-to-end encrypted channel.",
     link: "#",
   },
   {
