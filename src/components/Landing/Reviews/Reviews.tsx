@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 var $ = require("jquery");
 if (typeof window !== "undefined") {
-  // Client-side-only code
   // @ts-ignore
   window.$ = window.jQuery = require("jquery");
 }
@@ -79,7 +78,6 @@ export default function Reviews() {
       pb="50px"
       pt="100px"
       px={{ sm: "1rem", xl: "3rem" }}
-      // maxW={"min(100%,1950px)"}
       mx="auto"
       position="relative"
     >
@@ -197,6 +195,6 @@ const reviewsData = [
     name: "Hemchandra Chakravorty",
     location: "Copenhagen, Denmark",
     review:
-      "I know in real-time where the money is spent, and I don’t have to use company’s credit card anymore. What a relief!",
+      "I know in real-time where the money is spent, and I don’t have to use company’s credit card anymore. ",
   },
 ];
