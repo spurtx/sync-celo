@@ -102,7 +102,7 @@ export default function SectionThree() {
               my="1.2rem"
               className="trigger_3"
             >
-              Seamless integrations with other payment tools
+              Seamless connection with tools you are familiar with
             </Heading>
 
             <Text
@@ -111,8 +111,7 @@ export default function SectionThree() {
               fontWeight="normal"
               lineHeight="1.5rem"
             >
-              Sync! absolutely works great with payment tools in ensuring your
-              payments.
+              Add as many projects and teams as you grow.
             </Text>
 
             <Button

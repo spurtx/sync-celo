@@ -53,7 +53,7 @@ export default function Custom404() {
             fontWeight="normal"
             lineHeight={{ sm: "1.2rem", lg: "1.3rem" }}
           >
-            Its not you, its us. Please put in your email address <br /> and we
+            It's not you, it's us. Please put in your email address <br /> and we
             will send you a bop as soon as the <br /> page information is
             available
           </Text>

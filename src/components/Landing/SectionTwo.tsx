@@ -122,7 +122,7 @@ export default function SectionTwo() {
           className="trigger_2"
           ref={headRef}
         >
-          Apply, Join Projects & Get Paid
+          Work and get paid from anywhere!
         </Heading>
 
         <Text
@@ -132,9 +132,7 @@ export default function SectionTwo() {
           fontWeight="normal"
           lineHeight="1.5rem"
         >
-          Setup the tools that enable you work efficiently. You can pick from
-          the existing <br /> integrations we have connect at least one to
-          proceed.
+          Apply to join projects, complete milestones, and earn.
         </Text>
       </Box>
 
@@ -157,11 +155,11 @@ export default function SectionTwo() {
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
             <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Measure your productivity
+              Opportunities Network
             </Text>
             <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
+              Get access to and collaborate with a verified network of partners,
+              gigs and teams.
             </Text>
           </Box>
 
@@ -170,11 +168,11 @@ export default function SectionTwo() {
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
             <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Activity Statistics
+              Productivity Management
             </Text>
             <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
+              Work with tools designed to help you maximize efficiency and
+              improve employability.
             </Text>
           </Box>
         </Box>
@@ -207,11 +205,11 @@ export default function SectionTwo() {
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
             <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Easy Access
+              Finance Management
             </Text>
             <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
+              Beyond collections and payouts, get access to financial management
+              and security tools.
             </Text>
           </Box>
 
@@ -220,11 +218,11 @@ export default function SectionTwo() {
               <GoPrimitiveDot color="#FF8A65" size="1.1rem" />
             </Tag>
             <Text color="#FAFAFB" my="0.4rem" fontWeight="semibold">
-              Activity Statistics
+              Optimized and Accessible
             </Text>
             <Text fontSize="15px" color="#fafafbb6" fontWeight="normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis ac
-              placerat elementum massa turpis at.
+              Easy to use and designed for compatibility with even low capacity
+              devices.
             </Text>
           </Box>
         </Box>

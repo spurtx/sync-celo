@@ -89,57 +89,6 @@ function Landing() {
         <SectionThree />
       </Box>
 
-      <Box position="relative" bgColor="brand.400">
-        {/* top curve svg */}
-        <Box
-          transform="rotate(180deg)"
-          position="absolute"
-          top="-1px"
-          left="0px"
-          w="100%"
-          h={{ sm: "50px", lg: "100px" }}
-          zIndex="99"
-        >
-          <svg
-            id="bigHalfCircle"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-            width="100%"
-            height="100%"
-            viewBox="0 0 100 100"
-            fill="white"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 100 C40 0 60 0 100 100 Z" />
-          </svg>
-        </Box>
-
-        {/* bottom curve svg */}
-        <Box
-          position="absolute"
-          bottom="-1px"
-          left="0px"
-          w="100%"
-          h={{ sm: "50px", lg: "100px" }}
-          zIndex="99"
-        >
-          <svg
-            id="bigHalfCircle"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-            width="100%"
-            height="100%"
-            viewBox="0 0 100 100"
-            fill="white"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 100 C40 0 60 0 100 100 Z" />
-          </svg>
-        </Box>
-
-        <Reviews />
-      </Box>
-
       <Box
         position="relative"
         bg=" linear-gradient(180deg, rgba(0, 161, 93, 0.0001) 30.73%, rgba(0, 161, 93, 0.1) 92.71%)"
