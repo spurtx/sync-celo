@@ -6,14 +6,20 @@ import {
   InputGroup,
   InputRightElement,
   IconButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { RiSearchLine } from "react-icons/ri";
 import { BsFunnel } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
+import NotAllowed from "@components/Modal/NotAllowed";
 
 function MarketplaceSearchBar() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box pt="4rem" d="flex" alignItems="center" justifyContent="end" gap="6rem">
+      <NotAllowed isOpen={isOpen} onClose={onClose} />
+
       <Box d="flex" gap="14px">
         <Box
           bg="white"
@@ -70,6 +76,9 @@ function MarketplaceSearchBar() {
           borderRadius="xl"
           fontWeight="semibold"
           bgColor="brand.400"
+          onClick={onOpen}
+          _focus={{ outline: "none" }}
+          _hover={{ bg: "brand.400" }}
         >
           <Box as="span" mr="6px">
             <AiOutlinePlus />

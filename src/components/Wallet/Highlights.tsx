@@ -93,22 +93,24 @@ export default function Highlights() {
       <Box
         border="1px solid #D7D7D7"
         bgColor="#ffffff"
-        p="10px"
+        p="1.2rem"
         borderRadius="10px"
         h="400px"
         mt="1.2rem"
       >
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
-            width={500}
-            height={300}
+            // width={500}
+            // height={300}
             data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
+            margin={
+              {
+                // top: 5,
+                // right: 30,
+                // left: 20,
+                // bottom: 5,
+              }
+            }
           >
             <XAxis dataKey="name" />
             <YAxis />

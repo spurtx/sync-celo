@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import CrowdLending from "./crowd-lending";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +10,8 @@ const Home: NextPage = () => {
         <meta name="Sync" content="Sync landing page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      SYNC
+
+      <CrowdLending />
     </div>
   );
 };

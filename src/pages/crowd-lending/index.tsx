@@ -3,11 +3,11 @@ import Head from "next/head";
 import Layout from "@components/Layout";
 import MarketplaceView from "container/Marketplace/MarketplaceView";
 
-const Marketplace: NextPage = () => {
+const CrowdLending: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Sync! | Marketplace</title>
+        <title>Sync! | Crowd-lending</title>
         <meta name="Sync" content="Sync landing page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -19,4 +19,4 @@ const Marketplace: NextPage = () => {
   );
 };
 
-export default Marketplace;
+export default CrowdLending;

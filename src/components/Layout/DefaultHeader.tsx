@@ -23,11 +23,12 @@ import {
   useDisclosure,
   Text,
 } from "@chakra-ui/react";
+import NotAllowed from "@components/Modal/NotAllowed";
 
 export const defaultRoutes = [
   {
-    links: "/marketplace",
-    label: "Marketplace",
+    links: "/crowd-lending",
+    label: "Crowdlending",
     icon: <RiSearchLine />,
   },
   {
@@ -38,15 +39,22 @@ export const defaultRoutes = [
 ];
 
 const Logo = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <Box d="flex" gap="20px">
-      <Image
-        src="/images/beta_logo.png"
-        alt="sync logo"
-        width={{ base: "60px", lg: "100px" }}
-        height={{ base: "30px", lg: "40px" }}
-      />
-    </Box>
+    <>
+      <NotAllowed isOpen={isOpen} onClose={onClose} />
+      <Box d="flex" gap="20px">
+        <Image
+          src="/images/beta_logo.png"
+          alt="sync logo"
+          width={{ base: "60px", lg: "100px" }}
+          height={{ base: "30px", lg: "40px" }}
+          cursor="pointer"
+          onClick={onOpen}
+        />
+      </Box>
+    </>
   );
 };
 
@@ -149,8 +157,19 @@ const HeaderMiddleMoile = () => {
 };
 
 const HeaderAction = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <HStack justifyContent="end" alignItems="center" height="100%" spacing={4}>
+    <HStack
+      justifyContent="end"
+      alignItems="center"
+      height="100%"
+      spacing={4}
+      cursor="pointer"
+      onClick={onOpen}
+    >
+      <NotAllowed isOpen={isOpen} onClose={onClose} />
+
       <FaRegBell />
       <Box>
         <Tag

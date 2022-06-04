@@ -7,10 +7,12 @@ function BidCard({ data }: any) {
     <Box position="relative" maxH="400px" borderRadius="24px" h="400px">
       <Box h="50%" w="100%" position="relative">
         <Box
-          bg='url("/images/stripe_bg.png")'
+          bg={`url(${data.image})`}
           w="100%"
           h="100%"
           borderRadius="20px"
+          backgroundPosition="center"
+          backgroundSize="cover"
         />
       </Box>
 
@@ -24,10 +26,21 @@ function BidCard({ data }: any) {
         bg="white"
         p="20px"
       >
-        <Text fontSize="lg" fontWeight="semibold" color="text.dark">
+        <Text
+          fontSize="lg"
+          fontWeight="semibold"
+          color="text.dark"
+          textTransform="capitalize"
+        >
           {data.name}
         </Text>
-        <Text mt="0.5rem" fontSize="xs" color="brand.400" fontWeight="normal">
+        <Text
+          mt="0.5rem"
+          fontSize="xs"
+          color="brand.400"
+          fontWeight="normal"
+          textTransform="capitalize"
+        >
           by {data.owner}
         </Text>
 

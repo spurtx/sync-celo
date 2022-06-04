@@ -18,63 +18,66 @@ const Transactions = () => {
         Recent Transactions
       </Text>
 
-      <TableContainer
-        mt="1rem"
-        bgColor="white"
-        borderRadius="13px"
-        px="20px"
-        border="1px solid #D7D7D7"
-      >
-        <Table variant="simple" size="xs">
-          <Tbody border="none">
-            {defaultTransaction.map((item) => (
-              <Tr
-                key={item.name}
-                border="none"
-                color="#0D0138"
-                fontSize="sm"
-                fontWeight="medium"
-                h="70px"
-              >
-                <Td border="none" textTransform="capitalize">
-                  {item.title}
-                  <Text color="#0D0138" opacity="0.5" mt="3px">
-                    21 Dec 2021, at 08.12 am
-                  </Text>
-                </Td>
+      <Box overflowX="scroll">
+        <TableContainer
+          mt="1rem"
+          bgColor="white"
+          borderRadius="13px"
+          px="20px"
+          border="1px solid #D7D7D7"
+          overflowX="scroll"
+        >
+          <Table variant="simple" size="xs" overflowX="scroll">
+            <Tbody border="none">
+              {defaultTransaction.map((item) => (
+                <Tr
+                  key={item.name}
+                  border="none"
+                  color="#0D0138"
+                  fontSize="sm"
+                  fontWeight="medium"
+                  h="70px"
+                >
+                  <Td border="none" textTransform="capitalize">
+                    {item.title}
+                    <Text color="#0D0138" opacity="0.5" mt="3px">
+                      21 Dec 2021, at 08.12 am
+                    </Text>
+                  </Td>
 
-                <Td border="none" textTransform="capitalize">
-                  {item.type}
-                </Td>
+                  <Td border="none" textTransform="capitalize">
+                    {item.type}
+                  </Td>
 
-                <Td border="none" textTransform="capitalize">
-                  {item.name}
-                </Td>
+                  <Td border="none" textTransform="capitalize">
+                    {item.name}
+                  </Td>
 
-                <Td border="none">
-                  <Box d="flex" gap="10px">
-                    <GoPrimitiveDot
-                      color={item.schema === "income" ? "#00A15D" : "#FC2E53"}
-                      size="1.2rem"
+                  <Td border="none">
+                    <Box d="flex" gap="10px">
+                      <GoPrimitiveDot
+                        color={item.schema === "income" ? "#00A15D" : "#FC2E53"}
+                        size="1.2rem"
+                      />
+                      {item.schema}
+                    </Box>
+                  </Td>
+
+                  <Td border="none">+${item.amount}</Td>
+
+                  <Td border="none">
+                    <IconButton
+                      aria-label="action button"
+                      size="sm"
+                      icon={<BsThreeDots />}
                     />
-                    {item.schema}
-                  </Box>
-                </Td>
-
-                <Td border="none">+${item.amount}</Td>
-
-                <Td border="none">
-                  <IconButton
-                    aria-label="action button"
-                    size="sm"
-                    icon={<BsThreeDots />}
-                  />
-                </Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      </Box>
     </Box>
   );
 };
@@ -83,7 +86,7 @@ export default Transactions;
 
 const defaultTransaction = [
   {
-    title: "montly salary",
+    title: "monthly salary",
     type: "salary",
     name: "Emmanuel Johnson",
     schema: "income",

@@ -1,11 +1,38 @@
 import React from "react";
-import { Box, Button, Center } from "@chakra-ui/react";
-import MarketplaceSearchBar from "@components/Marketplace/MarketplaceSearchBar";
-import BidCard from "@components/Marketplace/BidCard";
+import {
+  Box,
+  Button,
+  Center,
+  useDisclosure,
+  Skeleton,
+  Stack,
+} from "@chakra-ui/react";
+import NotAllowed from "@components/Modal/NotAllowed";
+import dynamic from "next/dynamic";
+
+const [MarketplaceSearchBar, BidCard] = [
+  dynamic(() => import("@components/Marketplace/MarketplaceSearchBar"), {
+    loading: () => (
+      <Stack>
+        <Skeleton height="50px" />
+      </Stack>
+    ),
+  }),
+  dynamic(() => import("@components/Marketplace/BidCard"), {
+    loading: () => (
+      <Stack>
+        <Skeleton height="200px" borderRadius="20px" />
+      </Stack>
+    ),
+  }),
+];
 
 function MarketplaceView() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box px={{ base: "1rem", lg: "4rem" }}>
+      <NotAllowed isOpen={isOpen} onClose={onClose} />
       <MarketplaceSearchBar />
 
       <Box mt="2rem" pb="100px">
@@ -33,6 +60,7 @@ function MarketplaceView() {
             borderRadius="8px"
             fontWeight="semibold"
             bgColor="brand.400"
+            onClick={onOpen}
           >
             Load more
           </Button>
@@ -57,53 +85,31 @@ const defaultBids = [
     payback_date: "23rd november 2023",
   },
   {
-    image: "/images/stripe_bg.png",
-    name: "Project Agerbee",
-    owner: "Kelly burton",
+    image: "/images/img_2.jpg",
+    name: "Project Berkowitz",
+    owner: "rachel green",
     description:
-      "Voluptatem et est. Et facere ea ipsum iste sed quibusdam fugit velit eius. Eos excepturi voluptatibus.",
+      "Bacon ipsum dolor amet andouille pork belly drumstick doner chislic turkey. Cow strip steak landjaeger,",
     funding_level: 75,
     final_amount: "950,000",
     days_left: "2",
     payback_date: "23rd november 2023",
   },
   {
-    image: "/images/stripe_bg.png",
+    image: "/images/img_3.jpg",
     name: "Project Agerbee",
-    owner: "Kelly burton",
+    owner: "sheldon cooper",
     description:
-      "Voluptatem et est. Et facere ea ipsum iste sed quibusdam fugit velit eius. Eos excepturi voluptatibus.",
+      "Brisket swine andouille, shank capicola spare ribs pork. Fatback chuck venison, ribeye sausage pork loin.",
     funding_level: 75,
     final_amount: "950,000",
     days_left: "2",
     payback_date: "23rd november 2023",
   },
   {
-    image: "/images/stripe_bg.png",
+    image: "/images/img_4.jpg",
     name: "Project Agerbee",
-    owner: "Kelly burton",
-    description:
-      "Voluptatem et est. Et facere ea ipsum iste sed quibusdam fugit velit eius. Eos excepturi voluptatibus.",
-    funding_level: 75,
-    final_amount: "950,000",
-    days_left: "2",
-    payback_date: "23rd november 2023",
-  },
-  {
-    image: "/images/stripe_bg.png",
-    name: "Project Agerbee",
-    owner: "Kelly burton",
-    description:
-      "Voluptatem et est. Et facere ea ipsum iste sed quibusdam fugit velit eius. Eos excepturi voluptatibus.",
-    funding_level: 75,
-    final_amount: "950,000",
-    days_left: "2",
-    payback_date: "23rd november 2023",
-  },
-  {
-    image: "/images/stripe_bg.png",
-    name: "Project Agerbee",
-    owner: "Kelly burton",
+    owner: "Leonard Hofstadter",
     description:
       "Voluptatem et est. Et facere ea ipsum iste sed quibusdam fugit velit eius. Eos excepturi voluptatibus.",
     funding_level: 75,
