@@ -5,11 +5,18 @@ import BidCard from "@components/Marketplace/BidCard";
 
 function MarketplaceView() {
   return (
-    <Box px="4rem">
+    <Box px={{ base: "1rem", lg: "4rem" }}>
       <MarketplaceSearchBar />
 
       <Box mt="2rem" pb="100px">
-        <Box display="grid" gridTemplateColumns="1fr 1fr 1fr" gap={8}>
+        <Box
+          display="grid"
+          gridTemplateColumns={{
+            base: "1fr",
+            lg: "1fr 1fr 1fr",
+          }}
+          gap={8}
+        >
           {defaultBids?.map((item: any, index: any) => {
             return (
               <Box key={`${item.name} - ${index}`}>

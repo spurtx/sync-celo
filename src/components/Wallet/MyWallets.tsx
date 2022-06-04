@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Tag, Text, HStack } from "@chakra-ui/react";
+import { Box, Tag, Text, HStack, Image } from "@chakra-ui/react";
 import { IoIosArrowRoundUp } from "react-icons/io";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
 
 const AllTimeWallet = () => {
   return (
@@ -31,7 +32,7 @@ const AllTimeWallet = () => {
         </Text>
 
         <Text color="#0D0138" fontWeight="semibold" mt="1.2rem" fontSize="xl">
-          147.242.131,40
+          $147,242,131,40
         </Text>
       </Box>
     </Box>
@@ -59,12 +60,14 @@ const MainWallet = () => {
         $123,000.10
       </Text>
 
-      <Box>
+      <HStack d="flex" justifyContent="space-between">
         <Tag color="brand.400" bgColor="#DCEEE6">
           20.4%
           <IoIosArrowRoundUp />
         </Tag>
-      </Box>
+
+        <FaRegMoneyBillAlt size="1.5rem" color="#000000" />
+      </HStack>
     </Box>
   );
 };
@@ -90,12 +93,14 @@ const CeloWallet = () => {
         $123,000.10
       </Text>
 
-      <Box>
+      <HStack d="flex" justifyContent="space-between">
         <Tag color="brand.400" bgColor="#DCEEE6">
           20.4%
           <IoIosArrowRoundUp />
         </Tag>
-      </Box>
+
+        <Image src="/images/celo.png" boxSize="25px" alt="celo logo" />
+      </HStack>
     </Box>
   );
 };

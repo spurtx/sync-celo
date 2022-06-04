@@ -16,7 +16,7 @@ function BidCard({ data }: any) {
 
       <Box
         border="1px solid #D7D7D7"
-        h="60%"
+        h="65%"
         w="100%"
         borderRadius="24px"
         position="absolute"

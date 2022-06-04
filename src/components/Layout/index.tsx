@@ -8,9 +8,7 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <Box>
-      <Box maxW={"min(100%,1920px)"} mx="auto">
-        <DefaultHeader />
-      </Box>
+      <DefaultHeader />
 
       <Box bgColor="#FAFAFB" minH="calc(100vh - 70px)">
         <Box maxW={"min(100%,1920px)"} mx="auto">
