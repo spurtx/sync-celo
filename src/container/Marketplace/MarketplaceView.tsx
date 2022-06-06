@@ -6,7 +6,9 @@ import {
   useDisclosure,
   Skeleton,
   Stack,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import NotAllowed from "@components/Modal/NotAllowed";
 import dynamic from "next/dynamic";
 
@@ -46,9 +48,15 @@ function MarketplaceView() {
         >
           {defaultBids?.map((item: any, index: any) => {
             return (
-              <Box key={`${item.name} - ${index}`}>
-                <BidCard data={item} />
-              </Box>
+              <Link
+                href="/crowd-lending/abcd"
+                passHref
+                key={`${item.name} - ${index}`}
+              >
+                <ChakraLink _hover={{ textDecor: "none" }}>
+                  <BidCard data={item} />
+                </ChakraLink>
+              </Link>
             );
           })}
         </Box>
