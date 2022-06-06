@@ -1,16 +1,16 @@
 import {
   Text,
-  Link as ChakraLink,
   Button,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalFooter,
   ModalBody,
+  Input,
+  Box,
 } from "@chakra-ui/react";
-import Link from "next/link";
 
-export default function NotAllowed({ isOpen, onClose }: any) {
+export default function Transfer({ isOpen, onClose }: any) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} trapFocus={false}>
       <ModalOverlay />
@@ -22,36 +22,33 @@ export default function NotAllowed({ isOpen, onClose }: any) {
             fontSize={{ base: "md", md: "lg" }}
             textAlign="center"
           >
-            You can’t do this right now
+            Transfer
           </Text>
-          <Text
-            color="text.secondary"
-            fontWeight="normal"
-            fontSize={{ base: "sm", md: "md" }}
-            textAlign="center"
-            mt="1.7rem"
-          >
-            You need to have a Sync! account to access.
-          </Text>
+
+          <Box mt="2rem">
+            <Input
+              fontSize="sm"
+              borderRadius="8px"
+              border="1px solid"
+              borderColor="brand.400"
+              h="50px"
+            />
+          </Box>
         </ModalBody>
 
         <ModalFooter justifyContent="center" gap={10}>
-          <Link href=" https://teamsync.tools/signup" passHref>
-            <ChakraLink _hover={{ textDecor: "none" }}>
-              <Button
-                color="white"
-                fontSize="sm"
-                borderRadius="8px"
-                fontWeight="semibold"
-                bgColor="brand.400"
-                _focus={{ outline: "none" }}
-                _hover={{ bg: "brand.400" }}
-                size="lg"
-              >
-                Get started
-              </Button>
-            </ChakraLink>
-          </Link>
+          <Button
+            color="white"
+            fontSize="sm"
+            borderRadius="8px"
+            fontWeight="semibold"
+            bgColor="brand.400"
+            _focus={{ outline: "none" }}
+            _hover={{ bg: "brand.400" }}
+            size="lg"
+          >
+            Proceed
+          </Button>
 
           <Button
             color="brand.400"
@@ -63,8 +60,8 @@ export default function NotAllowed({ isOpen, onClose }: any) {
             onClick={onClose}
             _focus={{ outline: "none" }}
             _hover={{ bg: "white" }}
-            size="lg"
             bg="white"
+            size="lg"
           >
             Cancel
           </Button>

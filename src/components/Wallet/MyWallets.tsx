@@ -1,8 +1,17 @@
 import React from "react";
-import { Box, Tag, Text, HStack, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Tag,
+  Text,
+  HStack,
+  Image,
+  IconButton,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { IoIosArrowRoundUp } from "react-icons/io";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
+import { BiTransferAlt } from "react-icons/bi";
+import Transfer from "@components/Modal/Transfer";
 
 const AllTimeWallet = () => {
   return (
@@ -41,17 +50,23 @@ const AllTimeWallet = () => {
 };
 
 const MainWallet = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box position="relative">
-      <Tag
+      <Transfer isOpen={isOpen} onClose={onClose} />
+
+      <IconButton
+        aria-label="transfer"
+        icon={<BiTransferAlt size="1.3rem" />}
+        _hover={{ bg: "brand.400" }}
         position="absolute"
-        right="-17px"
+        right="-30px"
         top="30%"
-        bg="none"
-        d={{ base: "none", lg: "block" }}
-      >
-        <BsArrowRightSquareFill color="#00A15D" size="1.3rem" />
-      </Tag>
+        bgColor="brand.400"
+        d={{ base: "none", lg: "flex" }}
+        onClick={onOpen}
+      />
       <Box
         w={{ base: "100%", lg: "90%" }}
         border="1px solid #D7D7D7"
@@ -88,21 +103,6 @@ const MainWallet = () => {
 const CeloWallet = () => {
   return (
     <Box position="relative" d="flex" justifyContent="end">
-      <Tag
-        position="absolute"
-        left="-17px"
-        top="60%"
-        bg="none"
-        size="sm"
-        d={{ base: "none", lg: "flex" }}
-        // d='flex'
-        // w="30px"
-        // h="25px"
-        // justifyContent="center"
-        // alignItems="center"
-      >
-        <BsArrowLeftSquareFill size="1.3rem" color="#00A15D" />
-      </Tag>
       <Box
         w={{ base: "100%", lg: "90%" }}
         border="1px solid #D7D7D7"
