@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, Text, Tag, Progress } from "@chakra-ui/react";
 import { BsClock } from "react-icons/bs";
+import { format } from "date-fns";
 
 function BidCard({ data }: any) {
   return (
@@ -84,7 +85,7 @@ function BidCard({ data }: any) {
             fontWeight="normal"
             fontSize="12px"
           >
-            Pledged
+            Needed
           </Text>
         </Box>
 
@@ -105,13 +106,13 @@ function BidCard({ data }: any) {
             <Box as="span" mr="4px">
               <BsClock />
             </Box>
-            {data.days_left} day left
+            {data.days_left} days left
           </Tag>
 
           <Text fontSize="11px">
-            Payback Date:
+            Payback Date:{" "}
             <Text as="span" fontWeight="semibold">
-              {data.payback_date}
+              {format(new Date(data.payback_date), "PP")}
             </Text>
           </Text>
         </Box>

@@ -1,7 +1,22 @@
 import React from "react";
-import { Box, Button, Text, Progress } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Text,
+  Progress,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalFooter,
+  ModalBody,
+  Input,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { format } from "date-fns";
 
 function ProjectAction() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box px={{ base: "1rem", lg: "4rem" }}>
       <Box
@@ -29,7 +44,7 @@ function ProjectAction() {
           </Text>
 
           <Text as="span" fontSize="sm">
-            by <Text as="span">Leonard Hofstadter</Text>
+            by <Text as="span">Cyberdyne Systems</Text>
           </Text>
 
           <Text
@@ -69,7 +84,7 @@ function ProjectAction() {
               <Text as="span" fontSize="sm">
                 Payback Date:{" "}
                 <Text as="span" fontWeight="medium">
-                  23rd november 2023
+                  {format(new Date("2022-10-02T03:36:49.452785+01:00"), "PP")}
                 </Text>
               </Text>
             </Box>
@@ -84,12 +99,71 @@ function ProjectAction() {
             bgColor="brand.400"
             _focus={{ outline: "none" }}
             _hover={{ bg: "brand.400" }}
+            onClick={onOpen}
             size="md"
           >
             Contribute
           </Button>
         </Box>
       </Box>
+
+      <Modal isOpen={isOpen} onClose={onClose} trapFocus={false}>
+        <ModalOverlay />
+        <ModalContent borderRadius="xl" py="2rem">
+          <ModalBody mb="2rem">
+            <Text
+              color="text.gray"
+              fontWeight="semibold"
+              fontSize={{ base: "md", md: "lg" }}
+              textAlign="center"
+            >
+              Contribute
+            </Text>
+
+            <Box mt="2rem">
+              <Input
+                fontSize="sm"
+                borderRadius="8px"
+                border="1px solid"
+                borderColor="brand.400"
+                h="50px"
+                placeholder="$"
+              />
+            </Box>
+          </ModalBody>
+
+          <ModalFooter justifyContent="center" gap={10}>
+            <Button
+              color="white"
+              fontSize="sm"
+              borderRadius="8px"
+              fontWeight="semibold"
+              bgColor="brand.400"
+              _focus={{ outline: "none" }}
+              _hover={{ bg: "brand.400" }}
+              size="lg"
+            >
+              Proceed
+            </Button>
+
+            <Button
+              color="brand.400"
+              fontSize="sm"
+              borderRadius="8px"
+              border="2px solid"
+              borderColor="brand.400"
+              fontWeight="semibold"
+              onClick={onClose}
+              _focus={{ outline: "none" }}
+              _hover={{ bg: "white" }}
+              bg="white"
+              size="lg"
+            >
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 }
