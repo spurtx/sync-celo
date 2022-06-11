@@ -1,41 +1,54 @@
 import React from "react";
-import {
-  Box,
-  useDisclosure,
-  IconButton,
-  Text,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { HiOutlineArrowLeft } from "react-icons/hi";
+import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
-const [ProjectAction, ProjectDescription] = [
+const [
+  ProjectAction,
+  ProjectDescription,
+  LenderHistory,
+  LenderUpdate,
+  VotingPower,
+] = [
   dynamic(() => import("@components/Marketplace/Project/ProjectAction")),
   dynamic(() => import("@components/Marketplace/Project/ProjectDescription")),
+  dynamic(() => import("@components/Marketplace/Project/LenderHistory")),
+  dynamic(() => import("@components/Marketplace/Project/LenderUpdate")),
+  dynamic(() => import("@components/Marketplace/Project/VotingPower")),
 ];
 
 function ProjectView() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
-    <Box px={{ base: "1rem", lg: "4rem" }}>
-      <Box d="flex" alignItems="center" gap="20px" pt="2rem">
-        <Link href="/crowd-lending" passHref>
-          <ChakraLink>
-            <IconButton
-              aria-label=""
-              icon={<HiOutlineArrowLeft />}
-              bgColor="white"
-              boxShadow="sm"
-            />
-          </ChakraLink>
-        </Link>
-        <Text fontWeight="medium">Crowd Lending</Text>
+    <Box px={{ base: "1rem", lg: "2.5rem" }} pt="50px">
+      <Box
+        display="flex"
+        gap="25px"
+        flexDirection={{ base: "column", lg: "row" }}
+      >
+        <Box w={{ base: "100%", lg: "70%" }}>
+          <ProjectAction />
+          <ProjectDescription />
+        </Box>
+
+        <Box w={{ base: "100%", lg: "30%" }}>
+          <VotingPower />
+        </Box>
       </Box>
 
-      <ProjectAction />
-      <ProjectDescription />
+      <Box
+        display="flex"
+        gap="25px"
+        mt="25px"
+        pb="100px"
+        flexDirection={{ base: "column", lg: "row" }}
+      >
+        <Box w={{ base: "100%", lg: "50%" }}>
+          <LenderHistory />
+        </Box>
+
+        <Box w={{ base: "100%", lg: "50%" }}>
+          <LenderUpdate />
+        </Box>
+      </Box>
     </Box>
   );
 }
