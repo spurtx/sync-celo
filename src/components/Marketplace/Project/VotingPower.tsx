@@ -1,0 +1,138 @@
+import React from "react";
+import {
+  Box,
+  Text,
+  HStack,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  List,
+  ListItem,
+} from "@chakra-ui/react";
+import { BiChevronDown } from "react-icons/bi";
+import { GoPrimitiveDot } from "react-icons/go";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+// ChartJS.pluginService.register({
+//   beforeDraw: function (chart: { chart: { width: any; height: any; ctx: any; }; }) {
+//     var width = chart.chart.width,
+//       height = chart.chart.height,
+//       ctx = chart.chart.ctx;
+//     ctx.restore();
+//     var fontSize = (height / 114).toFixed(2);
+//     ctx.font = fontSize + "em sans-serif";
+//     ctx.textBaseline = "middle";
+//     var text = "75%",
+//       textX = Math.round((width - ctx.measureText(text).width) / 2),
+//       textY = height / 2;
+//     ctx.fillText(text, textX, textY);
+//     ctx.save();
+//   },
+// });
+
+function VotingPower() {
+  const data = {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [400, 300, 200, 100, 5],
+        backgroundColor: [
+          "#408AFD",
+          "#70CF98",
+          "#A36AFF",
+          "#B1C3F1",
+          "#7FD3EE",
+        ],
+        borderColor: ["#408AFD", "#70CF98", "#A36AFF", "#B1C3F1", "#7FD3EE"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const options = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return (
+    <Box
+      outline="1px solid #E2E2EA"
+      borderRadius="2xl"
+      bg="white"
+      position="relative"
+      py="1.8rem"
+      px="1.4rem"
+    >
+      <HStack mb="1rem" justifyContent="space-between" alignItems="center">
+        <Text color="text.gray" fontWeight="medium" fontSize="lg" mb="1rem">
+          Voting Power
+        </Text>
+
+        <Menu>
+          <MenuButton
+            as={Button}
+            rightIcon={<BiChevronDown size="1.5rem" />}
+            bgColor="transparent"
+            borderRadius="20px"
+            border="1px solid #717579"
+            _focus={{ outline: "none" }}
+            _hover={{ bgColor: "transparent" }}
+            _active={{ bgColor: "transparent" }}
+            fontSize="sm"
+            h="33px"
+            fontWeight="normal"
+            color="text.secondary"
+          >
+            Actions
+          </MenuButton>
+          <MenuList>
+            <MenuItem>...</MenuItem>
+          </MenuList>
+        </Menu>
+      </HStack>
+
+      <HStack>
+        <Box w="50%">
+          <Doughnut data={data} options={options} />
+        </Box>
+
+        <Box w="50%">
+          <List spacing={1} fontSize="12px" color="#1D2129">
+            <ListItem d="flex" alignItems="center">
+              <GoPrimitiveDot color="#408AFD" fontSize="1.5rem" />
+              400 Voting Points
+            </ListItem>
+            <ListItem d="flex" alignItems="center">
+              <GoPrimitiveDot color="#70CF98" fontSize="1.5rem" />
+              300 Voting Points
+            </ListItem>
+            <ListItem d="flex" alignItems="center">
+              <GoPrimitiveDot color="#A36AFF" fontSize="1.5rem" />
+              200 Voting Points
+            </ListItem>
+            <ListItem d="flex" alignItems="center">
+              <GoPrimitiveDot color="#B1C3F1" fontSize="1.5rem" />
+              100 Voting Points
+            </ListItem>
+            <ListItem d="flex" alignItems="center">
+              <GoPrimitiveDot color="#7FD3EE" fontSize="1.5rem" />
+              50 Voting Points
+            </ListItem>
+          </List>
+        </Box>
+      </HStack>
+    </Box>
+  );
+}
+
+export default VotingPower;
