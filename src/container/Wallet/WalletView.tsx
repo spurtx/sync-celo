@@ -18,7 +18,7 @@ const [MyWallets, Transactions, MyCards, Highlights] = [
     {
       loading: () => (
         <Stack>
-          <Skeleton height="50px" />
+          <Skeleton height="150px" />
         </Stack>
       ),
     }
@@ -28,7 +28,7 @@ const [MyWallets, Transactions, MyCards, Highlights] = [
     {
       loading: () => (
         <Stack>
-          <Skeleton height="50px" />
+          <Skeleton height="400px" />
         </Stack>
       ),
     }

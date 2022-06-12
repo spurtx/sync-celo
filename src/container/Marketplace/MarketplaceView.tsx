@@ -16,7 +16,7 @@ const [MarketplaceSearchBar, BidCard] = [
   dynamic(() => import("@components/Marketplace/MarketplaceSearchBar"), {
     loading: () => (
       <Stack>
-        <Skeleton height="50px" />
+        <Skeleton height="50px" mt="40px" />
       </Stack>
     ),
   }),
