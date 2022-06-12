@@ -2,18 +2,11 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
-const [
-  ProjectAction,
-  ProjectDescription,
-  LenderHistory,
-  LenderUpdate,
-  VotingPower,
-] = [
+const [ProjectAction, ProjectDescription, LenderHistory, LenderUpdate] = [
   dynamic(() => import("@components/Marketplace/Project/ProjectAction")),
   dynamic(() => import("@components/Marketplace/Project/ProjectDescription")),
   dynamic(() => import("@components/Marketplace/Project/LenderHistory")),
   dynamic(() => import("@components/Marketplace/Project/LenderUpdate")),
-  dynamic(() => import("@components/Marketplace/Project/VotingPower")),
 ];
 
 function ProjectView() {
@@ -29,9 +22,7 @@ function ProjectView() {
           <ProjectDescription />
         </Box>
 
-        <Box w={{ base: "100%", lg: "30%" }}>
-          <VotingPower />
-        </Box>
+        <Box w={{ base: "100%", lg: "30%" }}></Box>
       </Box>
 
       <Box
