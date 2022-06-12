@@ -18,30 +18,13 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// ChartJS.pluginService.register({
-//   beforeDraw: function (chart: { chart: { width: any; height: any; ctx: any; }; }) {
-//     var width = chart.chart.width,
-//       height = chart.chart.height,
-//       ctx = chart.chart.ctx;
-//     ctx.restore();
-//     var fontSize = (height / 114).toFixed(2);
-//     ctx.font = fontSize + "em sans-serif";
-//     ctx.textBaseline = "middle";
-//     var text = "75%",
-//       textX = Math.round((width - ctx.measureText(text).width) / 2),
-//       textY = height / 2;
-//     ctx.fillText(text, textX, textY);
-//     ctx.save();
-//   },
-// });
-
 function VotingPower() {
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+    labels: ["voting", "voting", "voting", "voting", "voting"],
     datasets: [
       {
         label: "# of Votes",
-        data: [400, 300, 200, 100, 5],
+        data: [400, 300, 200, 100, 50],
         backgroundColor: [
           "#408AFD",
           "#70CF98",
@@ -56,7 +39,6 @@ function VotingPower() {
   };
 
   const options = {
-    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -88,15 +70,19 @@ function VotingPower() {
             _focus={{ outline: "none" }}
             _hover={{ bgColor: "transparent" }}
             _active={{ bgColor: "transparent" }}
-            fontSize="sm"
+            fontSize="xs"
             h="33px"
             fontWeight="normal"
             color="text.secondary"
           >
-            Actions
+            March 2022
           </MenuButton>
-          <MenuList>
-            <MenuItem>...</MenuItem>
+          <MenuList fontSize="xs" color="text.secondary">
+            <MenuItem>January 2022</MenuItem>
+            <MenuItem>February 2022</MenuItem>
+            <MenuItem>March 2022</MenuItem>
+            <MenuItem>April 2022</MenuItem>
+            <MenuItem>May 2022</MenuItem>
           </MenuList>
         </Menu>
       </HStack>
